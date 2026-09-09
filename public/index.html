@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- =====================================================
+       META TAGS & SEO
+  ====================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muhammad Mubashir - Professional Web Developer & MERN Stack Developer. Building responsive, scalable, and modern web applications." />
+  <meta name="author" content="Muhammad Mubashir" />
+  <meta name="keywords" content="Muhammad Mubashir, Web Developer, MERN Stack, React, Node.js, Express, MongoDB, Portfolio" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Muhammad Mubashir | Web Developer & MERN Stack Developer" />
+  <meta property="og:description" content="Professional portfolio of Muhammad Mubashir – Web Developer & MERN Stack Developer from Pakistan." />
+  <meta property="og:type" content="website" />
+
+  <title>Muhammad Mubashir | Web Developer &amp; MERN Stack Developer</title>
+
+  <!-- =====================================================
+       FONTS - Inter (same as original)
+  ====================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- =====================================================
+       BOOTSTRAP 5 CSS (CDN)
+  ====================================================== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+
+  <!-- =====================================================
+       BOOTSTRAP ICONS (CDN)
+  ====================================================== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- =====================================================
+       CUSTOM CSS
+  ====================================================== -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+  <header id="navbar" class="navbar-header fixed-top">
+    <div class="container-xl">
+      <div class="d-flex align-items-center justify-content-between py-3">
+
+        <!-- Brand Logo + Name -->
+        <a href="#home" class="brand-link d-flex align-items-center gap-3 text-decoration-none" onclick="scrollToSection(event, 'home')">
+          <div class="brand-logo">MM</div>
+          <span class="brand-name">Muhammad Mubashir</span>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <nav class="desktop-nav d-none d-md-flex align-items-center gap-1 px-3 py-2 rounded-pill">
+          <a href="#home"       class="nav-link-item active-nav" data-section="home"       onclick="scrollToSection(event, 'home')">Home</a>
+          <a href="#about"      class="nav-link-item"            data-section="about"      onclick="scrollToSection(event, 'about')">About</a>
+          <a href="#skills"     class="nav-link-item"            data-section="skills"     onclick="scrollToSection(event, 'skills')">Skills</a>
+          <a href="#projects"   class="nav-link-item"            data-section="projects"   onclick="scrollToSection(event, 'projects')">Projects</a>
+          <a href="#experience" class="nav-link-item"            data-section="experience" onclick="scrollToSection(event, 'experience')">Experience</a>
+          <a href="#services"   class="nav-link-item"            data-section="services"   onclick="scrollToSection(event, 'services')">Services</a>
+          <a href="#contact"    class="nav-link-item"            data-section="contact"    onclick="scrollToSection(event, 'contact')">Contact</a>
+        </nav>
+
+        <!-- Desktop: Theme Toggle + Download CV -->
+        <div class="d-none d-md-flex align-items-center gap-3">
+          <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme" onclick="toggleTheme()">
+            <i class="bi bi-moon-fill theme-icon-dark"></i>
+            <i class="bi bi-sun-fill theme-icon-light d-none"></i>
+          </button>
+          <a href="/Muhammad-Mubashir-CV.pdf" download class="btn-primary-purple d-flex align-items-center gap-2">
+            <i class="bi bi-download"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
+
+        <!-- Mobile: Theme Toggle + Hamburger -->
+        <div class="d-flex align-items-center gap-2 d-md-none">
+          <button class="theme-toggle-btn" aria-label="Toggle theme" onclick="toggleTheme()">
+            <i class="bi bi-moon-fill theme-icon-dark"></i>
+            <i class="bi bi-sun-fill theme-icon-light d-none"></i>
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation" onclick="toggleMobileMenu()">
+            <i class="bi bi-list" id="menuIcon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div class="mobile-menu d-md-none" id="mobileMenu">
+      <div class="container-xl">
+        <div class="mobile-menu-inner py-3">
+          <a href="#home"       class="mobile-nav-link" onclick="scrollToSection(event, 'home')">Home</a>
+          <a href="#about"      class="mobile-nav-link" onclick="scrollToSection(event, 'about')">About</a>
+          <a href="#skills"     class="mobile-nav-link" onclick="scrollToSection(event, 'skills')">Skills</a>
+          <a href="#projects"   class="mobile-nav-link" onclick="scrollToSection(event, 'projects')">Projects</a>
+          <a href="#experience" class="mobile-nav-link" onclick="scrollToSection(event, 'experience')">Experience</a>
+          <a href="#services"   class="mobile-nav-link" onclick="scrollToSection(event, 'services')">Services</a>
+          <a href="#contact"    class="mobile-nav-link" onclick="scrollToSection(event, 'contact')">Contact</a>
+          <div class="pt-3">
+            <a href="/Muhammad-Mubashir-CV.pdf" download class="btn-primary-purple w-100 d-flex align-items-center justify-content-center gap-2">
+              <i class="bi bi-download"></i>
+              <span>Download CV</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+  <main>
+
+    <!-- =================================================
+         HERO SECTION
+    ================================================== -->
+    <section id="home" class="hero-section">
+
+      <!-- Ambient Background Glows -->
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+
+      <!-- Subtle SVG Background Lines -->
+      <svg class="hero-bg-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M-100,200 C300,50 800,450 1400,200" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+        <path d="M-100,450 C400,200 700,600 1400,350" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+        <path d="M-50,650 C500,450 900,750 1500,550" stroke="#8B5CF6" stroke-width="1" fill="none"/>
+      </svg>
+
+      <div class="container-xl position-relative" style="z-index:10;">
+        <div class="row align-items-center g-5">
+
+          <!-- Left Column: Hero Content -->
+          <div class="col-lg-7 hero-content reveal-fade-up">
+
+            <!-- Greeting Badge -->
+            <div class="greeting-badge mb-4">
+              👋 Hello, I'm
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-heading">
+              <span class="d-block text-white">Muhammad</span>
+              <span class="d-block hero-name-gradient">Mubashir</span>
+            </h1>
+
+            <!-- Role -->
+            <div class="hero-role mb-4">
+              <span class="text-white">Web Developer</span>
+              <span class="role-divider">|</span>
+              <span class="role-purple">MERN Stack Developer</span>
+            </div>
+
+            <!-- Description -->
+            <p class="hero-description mb-5">
+              I build responsive, scalable, and user-focused web applications using modern technologies. Specializing in the MERN stack to create performant full-stack solutions that solve real-world problems.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="d-flex flex-wrap gap-3 mb-5">
+              <button class="btn-primary-purple d-flex align-items-center gap-2" onclick="scrollToSection(event, 'projects')">
+                <span>View Projects</span>
+                <i class="bi bi-arrow-right"></i>
+              </button>
+              <a href="/Muhammad-Mubashir-CV.pdf" download class="btn-secondary-dark d-flex align-items-center gap-2">
+                <span>Download CV</span>
+                <i class="bi bi-download text-purple-400"></i>
+              </a>
+              <button class="btn-secondary-dark d-flex align-items-center gap-2" onclick="scrollToSection(event, 'contact')">
+                <span>Contact Me</span>
+                <i class="bi bi-envelope text-purple-400"></i>
+              </button>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="social-row pt-4">
+              <span class="social-label">Connect with me</span>
+              <div class="d-flex align-items-center gap-3">
+                <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon-btn">
+                  <i class="bi bi-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://x.com/YOUR_X_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="social-icon-btn">
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+                <a href="mailto:mubashir.code@gmail.com" aria-label="Email" class="social-icon-btn">
+                  <i class="bi bi-envelope"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Portrait + Floating Stats -->
+          <div class="col-lg-5 hero-portrait-col reveal-fade-up" style="animation-delay:0.2s;">
+            <div class="hero-portrait-wrapper">
+
+              <!-- Animated Rings -->
+              <div class="ring-outer ring-pulse"></div>
+              <div class="ring-dashed ring-spin"></div>
+
+              <!-- Glowing Particles -->
+              <div class="particle particle-1"></div>
+              <div class="particle particle-2"></div>
+              <div class="particle particle-3"></div>
+
+              <!-- Portrait Image -->
+              <div class="portrait-frame">
+                <div class="portrait-inner">
+                  <img
+                    src="images/portrait.png"
+                    alt="Muhammad Mubashir - Web Developer"
+                    class="portrait-img"
+                    loading="eager"
+                    onerror="this.src='images/portrait-placeholder.svg'; this.onerror=null;"
+                  />
+                </div>
+              </div>
+
+              <!-- Floating Stats Card -->
+              <div class="stats-card glow-purple-sm">
+                <div class="row g-3">
+                  <div class="col-6">
+                    <div class="stat-item">
+                      <div class="stat-icon"><i class="bi bi-folder2-open"></i></div>
+                      <div>
+                        <div class="stat-value">06+</div>
+                        <div class="stat-label">Projects Completed</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="stat-item">
+                      <div class="stat-icon"><i class="bi bi-briefcase"></i></div>
+                      <div>
+                        <div class="stat-value">1+</div>
+                        <div class="stat-label">Years of Experience</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="stat-item">
+                      <div class="stat-icon"><i class="bi bi-cpu"></i></div>
+                      <div>
+                        <div class="stat-value">10+</div>
+                        <div class="stat-label">Technologies</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="stat-item">
+                      <div class="stat-icon"><i class="bi bi-star"></i></div>
+                      <div>
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================
+         ABOUT SECTION
+    ================================================== -->
+    <section id="about" class="about-section py-section">
+      <div class="container-xl">
+        <div class="section-card reveal-fade-up">
+
+          <!-- Ambient corner gradients -->
+          <div class="section-card-glow section-card-glow-tr"></div>
+          <div class="section-card-glow section-card-glow-bl"></div>
+
+          <div class="row g-5 position-relative" style="z-index:2;">
+
+            <!-- Left: About Me -->
+            <div class="col-lg-6">
+              <!-- Heading with icon -->
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="section-icon-box">
+                  <i class="bi bi-person"></i>
+                </div>
+                <h2 class="section-title mb-0">About Me</h2>
+              </div>
+
+              <p class="section-description mb-4">
+                I'm a passionate MERN Stack Developer who loves turning ideas into reality using clean code and modern technologies. I enjoy building efficient, scalable, and user-friendly web applications.
+              </p>
+
+              <!-- Bullet Points -->
+              <div class="about-points mb-5">
+                <div class="about-point-item">
+                  <i class="bi bi-check-circle-fill about-check-icon"></i>
+                  <span>Focused on writing clean, efficient &amp; scalable code</span>
+                </div>
+                <div class="about-point-item">
+                  <i class="bi bi-check-circle-fill about-check-icon"></i>
+                  <span>Love solving real-world problems through technology</span>
+                </div>
+                <div class="about-point-item">
+                  <i class="bi bi-check-circle-fill about-check-icon"></i>
+                  <span>Always learning and exploring new technologies</span>
+                </div>
+              </div>
+
+              <button class="btn-secondary-dark d-inline-flex align-items-center gap-2" onclick="scrollToSection(event, 'experience')">
+                <span>Know More About Me</span>
+                <i class="bi bi-arrow-right text-purple-400"></i>
+              </button>
+            </div>
+
+            <!-- Right: Tech Stack -->
+            <div class="col-lg-6 border-start-subtle ps-lg-5">
+              <!-- Tech Stack Header -->
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <h3 class="section-title mb-0">Tech Stack</h3>
+                <span class="tech-badge">10+ Core Skills</span>
+              </div>
+
+              <!-- Tech Cards Grid -->
+              <div class="tech-grid" id="techGrid">
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><path d="M5 3l1.7 19.3L16 28l9.3-5.7L27 3H5z" fill="#E34F26"/><path d="M16 25.4l7.5-2.1 1.5-16.3H16v18.4z" fill="#EF652A"/><path d="M16 13h4l.3-3.5H16V6H25.5l-.3 2.5-2 22.5L16 33V13z" fill="#fff"/><path d="M16 13v3.5h-3.7l-.3-3.5H16zm-4-7h8V9.5H12L11.7 6z" fill="#EBEBEB"/></svg>
+                  </div>
+                  <span class="tech-name">HTML5</span>
+                  <span class="tech-category">Frontend</span>
+                </div>
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><path d="M5 3l1.7 19.3L16 28l9.3-5.7L27 3H5z" fill="#264DE4"/><path d="M16 25.4l7.5-2.1 1.5-16.3H16v18.4z" fill="#2965F1"/><path d="M16 13h-4.1l-.3 3.5H16V20h-7.5l-.3-3 .3-3.5L16 13zM16 6H8l.3 3.5H16V13z" fill="#EBEBEB"/><path d="M16 13v3.5h3.7l-.4 4-3.3 1V25l6.1-1.7.1-1 .8-8.8H16zm0-7v3.5h7.5l.3-3.5H16z" fill="#fff"/></svg>
+                  </div>
+                  <span class="tech-name">CSS3</span>
+                  <span class="tech-category">Frontend</span>
+                </div>
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><rect width="32" height="32" rx="4" fill="#F7DF1E"/><path d="M8 25.6l2.3-1.4c.4.8.8 1.4 1.7 1.4.9 0 1.4-.3 1.4-1.7V15.2h2.8v8.8c0 2.8-1.6 4-4 4-2.1 0-3.4-1.1-4.2-2.4zm10.2-.2l2.3-1.4c.6 1 1.4 1.7 2.7 1.7 1.2 0 1.9-.6 1.9-1.3 0-.9-.8-1.3-2-1.8l-.7-.3c-2-.8-3.3-1.9-3.3-4.1 0-2 1.5-3.6 3.9-3.6 1.7 0 2.9.6 3.7 2.1l-2.1 1.4c-.5-.8-1-1.2-1.9-1.2-.8 0-1.3.5-1.3 1.2 0 .9.5 1.2 1.7 1.7l.7.3c2.3 1 3.7 2.1 3.7 4.3 0 2.5-2 3.9-4.6 3.9-2.6 0-4.3-1.3-5-3z" fill="#000"/></svg>
+                  </div>
+                  <span class="tech-name">JavaScript</span>
+                  <span class="tech-category">Language</span>
+                </div>
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13S23.2 3 16 3z" fill="#61DAFB"/><path d="M16 19.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" fill="#20232A"/><path d="M16 11.5c6.6 0 12-.7 12-1.5S22.6 8.5 16 8.5 4 9.2 4 10s5.4 1.5 12 1.5zm0 9c6.6 0 12-.7 12-1.5S22.6 17 16 17 4 17.7 4 18.5s5.4 1.5 12 1.5z" stroke="#61DAFB" stroke-width="1.5"/><path d="M10.5 10.3c3.3-5.7 7.3-9.6 9-8.6s.6 6.5-2.7 12.2-7.3 9.6-9 8.6-.5-6.5 2.7-12.2zm11 9.4c-3.3 5.7-7.3 9.6-9 8.6s-.6-6.5 2.7-12.2 7.3-9.6 9-8.6.6 6.5-2.7 12.2z" stroke="#61DAFB" stroke-width="1.5"/></svg>
+                  </div>
+                  <span class="tech-name">React.js</span>
+                  <span class="tech-category">Frontend</span>
+                </div>
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.7 6.5L3 29l6.7-1.7C11.4 28.4 13.6 29 16 29c7 0 13-6 13-13S23 3 16 3z" fill="#68A063"/><path d="M9.5 12.5l2 5 1.5-1.5 2 4 1-2 1.5 1 2-5-2-.5-1 2-1.5-3-1.5 1-1.5-2.5-2.5 1.5z" fill="#fff"/></svg>
+                  </div>
+                  <span class="tech-name">Node.js</span>
+                  <span class="tech-category">Backend</span>
+                </div>
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><rect width="32" height="32" rx="4" fill="#000"/><text x="5" y="22" font-size="14" font-family="monospace" font-weight="bold" fill="#fff">Ex</text></svg>
+                  </div>
+                  <span class="tech-name">Express.js</span>
+                  <span class="tech-category">Backend</span>
+                </div>
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><path d="M16 4C10.5 4 6 8 6 13c0 3.3 1.8 6.2 4.5 7.8L9 28l5.5-2c.5.1 1 .2 1.5.2 5.5 0 10-4 10-9S21.5 4 16 4z" fill="#47A248"/><ellipse cx="16" cy="13" rx="8" ry="5" fill="#47A248" stroke="#3a8a3e" stroke-width="1"/><ellipse cx="16" cy="11" rx="8" ry="4" fill="#47A248" stroke="#3a8a3e" stroke-width="0.5"/></svg>
+                  </div>
+                  <span class="tech-name">MongoDB</span>
+                  <span class="tech-category">Database</span>
+                </div>
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><path d="M16 4L3 10l2 14 11 6 11-6 2-14L16 4z" fill="#F05032"/><path d="M16 8l-6 4v8l6 4 6-4v-8L16 8zm4 10.5L16 21l-4-2.5v-5L16 11l4 2.5v5z" fill="#fff"/></svg>
+                  </div>
+                  <span class="tech-name">Git</span>
+                  <span class="tech-category">Tool</span>
+                </div>
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><path d="M16 3C9 3 3 9 3 16c0 5.7 3.7 10.6 8.8 12.3.6.1.8-.3.8-.6v-2.2c-3.5.8-4.2-1.5-4.2-1.5-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.6-1.4-5.6-6.1 0-1.3.5-2.4 1.3-3.3-.1-.3-.6-1.6.1-3.3 0 0 1-.3 3.4 1.3a11.5 11.5 0 016 0C21 9.7 22 10 22 10c.7 1.7.3 3 .2 3.3.8.9 1.3 2 1.3 3.3 0 4.7-2.9 5.8-5.6 6.1.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C25.3 26.6 29 21.7 29 16c0-7-6-13-13-13z" fill="#fff"/></svg>
+                  </div>
+                  <span class="tech-name">GitHub</span>
+                  <span class="tech-category">Platform</span>
+                </div>
+
+                <div class="tech-card">
+                  <div class="tech-icon-wrap">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="tech-svg"><rect width="32" height="32" rx="4" fill="#7B4FBE"/><path d="M8 10h6l2 8 2-8h6l-4 12h-8L8 10z" fill="#fff"/></svg>
+                  </div>
+                  <span class="tech-name">Bootstrap</span>
+                  <span class="tech-category">Styling</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================
+         SKILLS SECTION
+    ================================================== -->
+    <section id="skills" class="skills-section py-section">
+      <div class="container-xl">
+
+        <!-- Section Header -->
+        <div class="text-center mb-5 reveal-fade-up">
+          <h2 class="section-title-lg">Skills &amp; Technologies</h2>
+          <p class="section-subtitle">The tools and technologies I use to build modern web applications</p>
+        </div>
+
+        <div class="row g-4 reveal-fade-up">
+
+          <!-- Frontend Skills -->
+          <div class="col-lg-4 col-md-6">
+            <div class="skill-category-card">
+              <div class="skill-category-header">
+                <div class="section-icon-box"><i class="bi bi-layout-text-sidebar"></i></div>
+                <h3 class="skill-category-title">Frontend</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="bi bi-filetype-html"></i> HTML5</span>
+                <span class="skill-tag"><i class="bi bi-filetype-css"></i> CSS3</span>
+                <span class="skill-tag"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+                <span class="skill-tag"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                <span class="skill-tag"><i class="bi bi-braces"></i> React.js</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend Skills -->
+          <div class="col-lg-4 col-md-6">
+            <div class="skill-category-card">
+              <div class="skill-category-header">
+                <div class="section-icon-box"><i class="bi bi-server"></i></div>
+                <h3 class="skill-category-title">Backend</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="bi bi-hdd-network"></i> Node.js</span>
+                <span class="skill-tag"><i class="bi bi-code-slash"></i> Express.js</span>
+                <span class="skill-tag"><i class="bi bi-database"></i> MongoDB</span>
+                <span class="skill-tag"><i class="bi bi-shield-lock"></i> JWT Auth</span>
+                <span class="skill-tag"><i class="bi bi-plug"></i> REST APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Others -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="skill-category-card">
+              <div class="skill-category-header">
+                <div class="section-icon-box"><i class="bi bi-tools"></i></div>
+                <h3 class="skill-category-title">Tools &amp; Others</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag"><i class="bi bi-git"></i> Git</span>
+                <span class="skill-tag"><i class="bi bi-github"></i> GitHub</span>
+                <span class="skill-tag"><i class="bi bi-box"></i> Postman</span>
+                <span class="skill-tag"><i class="bi bi-cloud-upload"></i> Vercel</span>
+                <span class="skill-tag"><i class="bi bi-terminal"></i> VS Code</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================
+         PROJECTS SECTION
+    ================================================== -->
+    <section id="projects" class="projects-section py-section">
+      <div class="container-xl">
+
+        <!-- Section Header -->
+        <div class="d-flex flex-column flex-sm-row align-items-sm-end justify-content-between mb-5 gap-3 reveal-fade-up">
+          <div class="d-flex align-items-center gap-3">
+            <div class="section-icon-box"><i class="bi bi-stars"></i></div>
+            <div>
+              <h2 class="section-title-lg mb-0">Featured Projects</h2>
+              <p class="section-subtitle mb-0">Real-world web applications built with modern technologies</p>
+            </div>
+          </div>
+          <a href="#projects" class="view-all-link d-flex align-items-center gap-1">
+            <span>View All Projects</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="row g-4 g-lg-5">
+
+          <!-- Project 1 -->
+          <div class="col-md-6 col-lg-4 reveal-fade-up">
+            <div class="project-card" onclick="openModal('modal-college')">
+              <div class="project-img-wrap">
+                <img src="images/project-college.jpg" alt="College Management System" class="project-img" loading="lazy"
+                  onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1040 0%,#0d101c 100%)'; this.style.display='none';" />
+                <div class="project-img-overlay"></div>
+                <span class="project-badge">Full Stack</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">College Management System</h3>
+                <p class="project-desc">A complete solution to manage students, faculty, courses, attendance and grades.</p>
+                <div class="project-tags">
+                  <span class="project-tag">MERN</span>
+                  <span class="project-tag">Tailwind CSS</span>
+                  <span class="project-tag">JWT</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://your-college-management-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                    <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/college-management-system" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                    <span>GitHub</span><i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-md-6 col-lg-4 reveal-fade-up" style="animation-delay:0.1s;">
+            <div class="project-card" onclick="openModal('modal-ecommerce')">
+              <div class="project-img-wrap">
+                <img src="images/project-ecommerce.jpg" alt="E-Commerce Platform" class="project-img" loading="lazy"
+                  onerror="this.parentElement.style.background='linear-gradient(135deg,#0a1628 0%,#0d101c 100%)'; this.style.display='none';" />
+                <div class="project-img-overlay"></div>
+                <span class="project-badge">E-Commerce</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">E-Commerce Platform</h3>
+                <p class="project-desc">Full-featured e-commerce platform with cart, checkout, and payments.</p>
+                <div class="project-tags">
+                  <span class="project-tag">MERN</span>
+                  <span class="project-tag">Redux Toolkit</span>
+                  <span class="project-tag">Stripe</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://your-ecommerce-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                    <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/ecommerce-platform" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                    <span>GitHub</span><i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="col-md-6 col-lg-4 reveal-fade-up" style="animation-delay:0.2s;">
+            <div class="project-card" onclick="openModal('modal-chat')">
+              <div class="project-img-wrap">
+                <img src="images/project-chat.jpg" alt="Real-Time Chat App" class="project-img" loading="lazy"
+                  onerror="this.parentElement.style.background='linear-gradient(135deg,#0d1a30 0%,#0d101c 100%)'; this.style.display='none';" />
+                <div class="project-img-overlay"></div>
+                <span class="project-badge">Real-Time</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Real-Time Chat App</h3>
+                <p class="project-desc">Real-time chat application with rooms, private messaging &amp; auth.</p>
+                <div class="project-tags">
+                  <span class="project-tag">Socket.io</span>
+                  <span class="project-tag">React</span>
+                  <span class="project-tag">Node.js</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://your-chat-app-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                    <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/realtime-chat-app" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                    <span>GitHub</span><i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="col-md-6 col-lg-4 reveal-fade-up" style="animation-delay:0.1s;">
+            <div class="project-card" onclick="openModal('modal-dashboard')">
+              <div class="project-img-wrap">
+                <img src="images/project-dashboard.jpg" alt="Admin Dashboard" class="project-img" loading="lazy"
+                  onerror="this.parentElement.style.background='linear-gradient(135deg,#12103a 0%,#0d101c 100%)'; this.style.display='none';" />
+                <div class="project-img-overlay"></div>
+                <span class="project-badge">Analytics</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Admin Dashboard</h3>
+                <p class="project-desc">Analytics dashboard with charts, users, products and reports.</p>
+                <div class="project-tags">
+                  <span class="project-tag">React</span>
+                  <span class="project-tag">Chart.js</span>
+                  <span class="project-tag">Tailwind</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://your-admin-dashboard-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                    <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/admin-dashboard" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                    <span>GitHub</span><i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="col-md-6 col-lg-4 reveal-fade-up" style="animation-delay:0.2s;">
+            <div class="project-card" onclick="openModal('modal-auth')">
+              <div class="project-img-wrap">
+                <img src="images/project-auth.jpg" alt="Authentication System" class="project-img" loading="lazy"
+                  onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a28 0%,#0d101c 100%)'; this.style.display='none';" />
+                <div class="project-img-overlay"></div>
+                <span class="project-badge">Security</span>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Authentication System</h3>
+                <p class="project-desc">Secure authentication system with login, register, forgot password.</p>
+                <div class="project-tags">
+                  <span class="project-tag">Node.js</span>
+                  <span class="project-tag">Express</span>
+                  <span class="project-tag">JWT</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://your-auth-system-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                    <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/authentication-system" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                    <span>GitHub</span><i class="bi bi-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Project Modals -->
+      <div id="modal-college"   class="project-modal" onclick="closeModal('modal-college')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-college')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-college.jpg" alt="College Management System" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">College Management System</h3><p class="modal-desc">A complete solution to manage students, faculty, courses, attendance and grades. Built using the MERN stack with JWT authentication and a modern Tailwind CSS interface.</p><div class="project-tags mb-4"><span class="project-tag">MERN</span><span class="project-tag">Tailwind CSS</span><span class="project-tag">JWT</span></div><div class="d-flex gap-3"><a href="https://your-college-management-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/college-management-system" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
+      <div id="modal-ecommerce" class="project-modal" onclick="closeModal('modal-ecommerce')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-ecommerce')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-ecommerce.jpg" alt="E-Commerce Platform" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">E-Commerce Platform</h3><p class="modal-desc">Full-featured e-commerce platform with cart, checkout, and Stripe payment integration. State management with Redux Toolkit.</p><div class="project-tags mb-4"><span class="project-tag">MERN</span><span class="project-tag">Redux Toolkit</span><span class="project-tag">Stripe</span></div><div class="d-flex gap-3"><a href="https://your-ecommerce-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/ecommerce-platform" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
+      <div id="modal-chat"      class="project-modal" onclick="closeModal('modal-chat')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-chat')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-chat.jpg" alt="Real-Time Chat App" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">Real-Time Chat App</h3><p class="modal-desc">Real-time chat application with rooms, private messaging and authentication using Socket.io, React and Node.js.</p><div class="project-tags mb-4"><span class="project-tag">Socket.io</span><span class="project-tag">React</span><span class="project-tag">Node.js</span></div><div class="d-flex gap-3"><a href="https://your-chat-app-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/realtime-chat-app" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
+      <div id="modal-dashboard"  class="project-modal" onclick="closeModal('modal-dashboard')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-dashboard')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-dashboard.jpg" alt="Admin Dashboard" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">Admin Dashboard</h3><p class="modal-desc">Analytics dashboard with charts, user management, product listings and detailed reports using React and Chart.js.</p><div class="project-tags mb-4"><span class="project-tag">React</span><span class="project-tag">Chart.js</span><span class="project-tag">Tailwind</span></div><div class="d-flex gap-3"><a href="https://your-admin-dashboard-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/admin-dashboard" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
+      <div id="modal-auth"       class="project-modal" onclick="closeModal('modal-auth')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-auth')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-auth.jpg" alt="Authentication System" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">Authentication System</h3><p class="modal-desc">Secure authentication system with login, register, forgot password, JWT tokens and protected routes using Node.js and Express.</p><div class="project-tags mb-4"><span class="project-tag">Node.js</span><span class="project-tag">Express</span><span class="project-tag">JWT</span></div><div class="d-flex gap-3"><a href="https://your-auth-system-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/authentication-system" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
+    </section>
+
+    <!-- =================================================
+         EXPERIENCE SECTION
+    ================================================== -->
+    <section id="experience" class="experience-section py-section">
+      <div class="container-xl">
+        <div class="section-card reveal-fade-up">
+
+          <!-- Header -->
+          <div class="d-flex align-items-center gap-3 mb-5">
+            <div class="section-icon-box"><i class="bi bi-briefcase"></i></div>
+            <div>
+              <h2 class="section-title mb-0">Experience</h2>
+              <p class="section-subtitle mb-0">My career path and practical developer milestones</p>
+            </div>
+          </div>
+
+          <!-- Desktop Timeline (horizontal) -->
+          <div class="exp-timeline-desktop d-none d-md-block">
+            <!-- Timeline Bar -->
+            <div class="exp-timeline-bar"></div>
+            <div class="row g-4 position-relative" style="z-index:2;">
+
+              <div class="col-md-4">
+                <div class="exp-card-wrap">
+                  <div class="exp-node">01</div>
+                  <div class="exp-card">
+                    <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
+                      <span class="exp-type-badge">Internship</span>
+                      <span class="exp-date"><i class="bi bi-calendar3"></i> May 2024 – Aug 2024</span>
+                    </div>
+                    <h3 class="exp-role">Web Developer Intern</h3>
+                    <div class="exp-company"><i class="bi bi-building"></i> CodeAlpha</div>
+                    <p class="exp-desc">Worked on MERN stack projects, built responsive UIs and integrated REST APIs.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="exp-card-wrap">
+                  <div class="exp-node">02</div>
+                  <div class="exp-card">
+                    <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
+                      <span class="exp-type-badge">Freelance</span>
+                      <span class="exp-date"><i class="bi bi-calendar3"></i> Jan 2024 – Present</span>
+                    </div>
+                    <h3 class="exp-role">Freelance Developer</h3>
+                    <div class="exp-company"><i class="bi bi-building"></i> Self-Employed</div>
+                    <p class="exp-desc">Building custom web applications for clients worldwide. Focused on quality &amp; performance.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="exp-card-wrap">
+                  <div class="exp-node">03</div>
+                  <div class="exp-card">
+                    <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
+                      <span class="exp-type-badge">Academic</span>
+                      <span class="exp-date"><i class="bi bi-calendar3"></i> 2023 – 2024</span>
+                    </div>
+                    <h3 class="exp-role">Academic Projects</h3>
+                    <div class="exp-company"><i class="bi bi-building"></i> Final Year Projects</div>
+                    <p class="exp-desc">Developed multiple full-stack projects including College Management System.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Mobile Timeline (vertical) -->
+          <div class="exp-timeline-mobile d-md-none">
+            <div class="exp-mobile-item">
+              <div class="exp-mobile-node">01</div>
+              <div class="exp-card">
+                <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
+                  <span class="exp-type-badge">Internship</span>
+                  <span class="exp-date">May 2024 – Aug 2024</span>
+                </div>
+                <h3 class="exp-role">Web Developer Intern</h3>
+                <div class="exp-company">CodeAlpha</div>
+                <p class="exp-desc">Worked on MERN stack projects, built responsive UIs and integrated REST APIs.</p>
+              </div>
+            </div>
+            <div class="exp-mobile-item">
+              <div class="exp-mobile-node">02</div>
+              <div class="exp-card">
+                <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
+                  <span class="exp-type-badge">Freelance</span>
+                  <span class="exp-date">Jan 2024 – Present</span>
+                </div>
+                <h3 class="exp-role">Freelance Developer</h3>
+                <div class="exp-company">Self-Employed</div>
+                <p class="exp-desc">Building custom web applications for clients worldwide. Focused on quality &amp; performance.</p>
+              </div>
+            </div>
+            <div class="exp-mobile-item">
+              <div class="exp-mobile-node">03</div>
+              <div class="exp-card">
+                <div class="d-flex align-items-center justify-content-between mb-2 flex-wrap gap-2">
+                  <span class="exp-type-badge">Academic</span>
+                  <span class="exp-date">2023 – 2024</span>
+                </div>
+                <h3 class="exp-role">Academic Projects</h3>
+                <div class="exp-company">Final Year Projects</div>
+                <p class="exp-desc">Developed multiple full-stack projects including College Management System.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================
+         SERVICES SECTION
+    ================================================== -->
+    <section id="services" class="services-section py-section">
+      <div class="container-xl">
+
+        <!-- Section Header -->
+        <div class="text-center mb-5 reveal-fade-up">
+          <h2 class="section-title-lg">What I Offer</h2>
+          <p class="section-subtitle">Comprehensive full-stack engineering tailored for scalable products and clean interfaces.</p>
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-lg-4 col-md-6 reveal-fade-up">
+            <div class="service-card">
+              <div class="service-icon-box"><i class="bi bi-layers"></i></div>
+              <h3 class="service-title">Full-Stack Development</h3>
+              <p class="service-desc">Complete web applications using MERN stack with clean architecture and best practices.</p>
+              <div class="service-footer">
+                <span class="service-dot"></span>
+                <span class="service-ready">Production Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal-fade-up" style="animation-delay:0.1s;">
+            <div class="service-card">
+              <div class="service-icon-box"><i class="bi bi-layout-text-sidebar-reverse"></i></div>
+              <h3 class="service-title">Frontend Development</h3>
+              <p class="service-desc">Responsive &amp; modern UIs using React, Bootstrap and CSS with pixel-perfect attention to detail.</p>
+              <div class="service-footer">
+                <span class="service-dot"></span>
+                <span class="service-ready">Production Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal-fade-up" style="animation-delay:0.2s;">
+            <div class="service-card">
+              <div class="service-icon-box"><i class="bi bi-server"></i></div>
+              <h3 class="service-title">Backend Development</h3>
+              <p class="service-desc">RESTful APIs, authentication and server-side logic using Node.js and Express.js.</p>
+              <div class="service-footer">
+                <span class="service-dot"></span>
+                <span class="service-ready">Production Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal-fade-up" style="animation-delay:0.1s;">
+            <div class="service-card">
+              <div class="service-icon-box"><i class="bi bi-database"></i></div>
+              <h3 class="service-title">Database Management</h3>
+              <p class="service-desc">MongoDB design, queries, indexing and database optimization for scalable applications.</p>
+              <div class="service-footer">
+                <span class="service-dot"></span>
+                <span class="service-ready">Production Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal-fade-up" style="animation-delay:0.2s;">
+            <div class="service-card">
+              <div class="service-icon-box"><i class="bi bi-plug"></i></div>
+              <h3 class="service-title">API Integration</h3>
+              <p class="service-desc">Third-party APIs, payment gateways (Stripe), and seamless system integrations.</p>
+              <div class="service-footer">
+                <span class="service-dot"></span>
+                <span class="service-ready">Production Ready</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal-fade-up" style="animation-delay:0.3s;">
+            <div class="service-card">
+              <div class="service-icon-box"><i class="bi bi-phone"></i></div>
+              <h3 class="service-title">Responsive Design</h3>
+              <p class="service-desc">Pixel-perfect responsive websites that look great on mobile, tablet, and desktop screens.</p>
+              <div class="service-footer">
+                <span class="service-dot"></span>
+                <span class="service-ready">Production Ready</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================
+         WORKFLOW SECTION
+    ================================================== -->
+    <section class="workflow-section py-section">
+      <div class="container-xl">
+        <div class="workflow-card reveal-fade-up">
+
+          <div class="row g-5 align-items-center">
+
+            <!-- Left: Steps -->
+            <div class="col-lg-8">
+              <div class="mb-5">
+                <span class="process-badge">Process</span>
+                <h2 class="section-title mt-3">How I Work</h2>
+                <p class="section-subtitle">A structured end-to-end methodology for dependable project outcomes.</p>
+              </div>
+
+              <!-- Desktop Steps (Horizontal Timeline) -->
+              <div class="workflow-steps-desktop d-none d-sm-grid">
+                <div class="workflow-connecting-line"></div>
+                <div class="workflow-step">
+                  <div class="workflow-node"><i class="bi bi-clipboard-check"></i></div>
+                  <span class="workflow-num">01</span>
+                  <h4 class="workflow-title">Understand</h4>
+                  <p class="workflow-desc">I understand your requirements.</p>
+                </div>
+                <div class="workflow-step">
+                  <div class="workflow-node"><i class="bi bi-kanban"></i></div>
+                  <span class="workflow-num">02</span>
+                  <h4 class="workflow-title">Plan</h4>
+                  <p class="workflow-desc">I plan the best solution.</p>
+                </div>
+                <div class="workflow-step">
+                  <div class="workflow-node"><i class="bi bi-code-slash"></i></div>
+                  <span class="workflow-num">03</span>
+                  <h4 class="workflow-title">Develop</h4>
+                  <p class="workflow-desc">I build with clean code.</p>
+                </div>
+                <div class="workflow-step">
+                  <div class="workflow-node"><i class="bi bi-check2-all"></i></div>
+                  <span class="workflow-num">04</span>
+                  <h4 class="workflow-title">Test</h4>
+                  <p class="workflow-desc">I test for quality &amp; performance.</p>
+                </div>
+                <div class="workflow-step">
+                  <div class="workflow-node"><i class="bi bi-rocket-takeoff"></i></div>
+                  <span class="workflow-num">05</span>
+                  <h4 class="workflow-title">Deliver</h4>
+                  <p class="workflow-desc">I deliver on time with full support.</p>
+                </div>
+              </div>
+
+              <!-- Mobile Steps (Vertical) -->
+              <div class="d-sm-none workflow-steps-mobile">
+                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-clipboard-check"></i></div><div><span class="workflow-num">01</span><h4 class="workflow-title mb-0">Understand</h4><p class="workflow-desc mb-0">I understand your requirements.</p></div></div>
+                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-kanban"></i></div><div><span class="workflow-num">02</span><h4 class="workflow-title mb-0">Plan</h4><p class="workflow-desc mb-0">I plan the best solution.</p></div></div>
+                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-code-slash"></i></div><div><span class="workflow-num">03</span><h4 class="workflow-title mb-0">Develop</h4><p class="workflow-desc mb-0">I build with clean code.</p></div></div>
+                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-check2-all"></i></div><div><span class="workflow-num">04</span><h4 class="workflow-title mb-0">Test</h4><p class="workflow-desc mb-0">I test for quality &amp; performance.</p></div></div>
+                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-rocket-takeoff"></i></div><div><span class="workflow-num">05</span><h4 class="workflow-title mb-0">Deliver</h4><p class="workflow-desc mb-0">I deliver on time with support.</p></div></div>
+              </div>
+            </div>
+
+            <!-- Right: CTA Card -->
+            <div class="col-lg-4">
+              <div class="workflow-cta-card">
+                <span class="workflow-cta-label">Ready to start?</span>
+                <h3 class="workflow-cta-title">Have a project in mind?</h3>
+                <p class="workflow-cta-desc">Let's build something amazing together.</p>
+                <button class="btn-primary-purple w-100 d-flex align-items-center justify-content-center gap-2" onclick="scrollToSection(event, 'contact')">
+                  <span>Let's Talk</span>
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================
+         CONTACT SECTION
+    ================================================== -->
+    <section id="contact" class="contact-section py-section">
+      <div class="container-xl">
+        <div class="section-card reveal-fade-up">
+
+          <div class="row g-5 position-relative" style="z-index:2;">
+
+            <!-- Left: Contact Info -->
+            <div class="col-lg-5">
+              <h2 class="section-title-lg mb-2">Get In Touch</h2>
+              <p class="section-description mb-4">Let's connect and build something great together!</p>
+
+              <!-- Info Cards -->
+              <div class="d-flex flex-column gap-3 mb-5">
+                <a href="mailto:mubashir.code@gmail.com" class="contact-info-card text-decoration-none">
+                  <div class="contact-info-icon"><i class="bi bi-envelope"></i></div>
+                  <div>
+                    <span class="contact-info-label">Email</span>
+                    <span class="contact-info-value">mubashir.code@gmail.com</span>
+                  </div>
+                </a>
+                <a href="tel:+923137182187" class="contact-info-card text-decoration-none">
+                  <div class="contact-info-icon"><i class="bi bi-telephone"></i></div>
+                  <div>
+                    <span class="contact-info-label">Phone</span>
+                    <span class="contact-info-value">+92 313 7182187</span>
+                  </div>
+                </a>
+                <div class="contact-info-card">
+                  <div class="contact-info-icon"><i class="bi bi-geo-alt"></i></div>
+                  <div>
+                    <span class="contact-info-label">Location</span>
+                    <span class="contact-info-value">Pakistan</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Row -->
+              <div class="pt-4 border-top-subtle">
+                <span class="social-label d-block mb-3">Find me online</span>
+                <div class="d-flex gap-3">
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon-btn">
+                    <i class="bi bi-github"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
+                    <i class="bi bi-linkedin"></i>
+                  </a>
+                  <a href="https://x.com/YOUR_X_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="social-icon-btn">
+                    <i class="bi bi-twitter-x"></i>
+                  </a>
+                  <a href="mailto:mubashir.code@gmail.com" aria-label="Email" class="social-icon-btn">
+                    <i class="bi bi-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Contact Form + Workstation SVG -->
+            <div class="col-lg-7">
+
+              <!-- Contact Form -->
+              <div class="contact-form-wrap mb-4">
+                <!-- Success / Error Alerts -->
+                <div id="formSuccess" class="form-alert form-alert-success d-none">
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span>Thank you! Your message has been sent successfully. I will get back to you shortly.</span>
+                </div>
+                <div id="formError" class="form-alert form-alert-error d-none">
+                  <i class="bi bi-exclamation-circle-fill"></i>
+                  <span id="formErrorMsg">Something went wrong. Please try again.</span>
+                </div>
+
+                <form id="contactForm" class="contact-form" novalidate>
+                  <div class="row g-3 mb-3">
+                    <div class="col-sm-6">
+                      <label for="contactName" class="form-label-custom">Your Name <span class="required-star">*</span></label>
+                      <input type="text" id="contactName" name="name" class="form-input-custom" placeholder="e.g. Alex Mercer" required />
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="contactEmail" class="form-label-custom">Your Email <span class="required-star">*</span></label>
+                      <input type="email" id="contactEmail" name="email" class="form-input-custom" placeholder="e.g. alex@example.com" required />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="contactSubject" class="form-label-custom">Subject <span class="required-star">*</span></label>
+                    <input type="text" id="contactSubject" name="subject" class="form-input-custom" placeholder="Project Inquiry / Job Opportunity" required />
+                  </div>
+                  <div class="mb-4">
+                    <label for="contactMessage" class="form-label-custom">Your Message <span class="required-star">*</span></label>
+                    <textarea id="contactMessage" name="message" rows="4" class="form-input-custom" placeholder="Tell me about your project goals, timeline, and requirements..." required></textarea>
+                  </div>
+                  <button type="submit" id="submitBtn" class="btn-primary-purple w-100 d-flex align-items-center justify-content-center gap-2">
+                    <span id="submitBtnText">Send Message</span>
+                    <i class="bi bi-send" id="submitBtnIcon"></i>
+                  </button>
+                </form>
+              </div>
+
+              <!-- Developer Workstation SVG Illustration -->
+              <div class="workstation-wrap">
+                <svg class="workstation-svg" viewBox="0 0 500 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="monitor-screen-grad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#0B0E1B"/><stop offset="100%" stop-color="#15122B"/>
+                    </linearGradient>
+                    <linearGradient id="desk-grad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#1E2030"/><stop offset="100%" stop-color="#0C0E1A"/>
+                    </linearGradient>
+                  </defs>
+                  <polygon points="50,180 450,180 490,210 10,210" fill="url(#desk-grad)" opacity="0.8"/>
+                  <line x1="10" y1="210" x2="490" y2="210" stroke="#7C3AED" stroke-width="1" opacity="0.3"/>
+                  <rect x="235" y="145" width="30" height="35" rx="2" fill="#2A2E45"/>
+                  <ellipse cx="250" cy="180" rx="36" ry="6" fill="#1C1F33" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.4"/>
+                  <rect x="140" y="30" width="220" height="120" rx="8" fill="#0D101C" stroke="#2D3250" stroke-width="2"/>
+                  <rect x="146" y="36" width="208" height="108" rx="4" fill="url(#monitor-screen-grad)"/>
+                  <rect x="146" y="36" width="208" height="14" fill="#070913"/>
+                  <circle cx="155" cy="43" r="2.5" fill="#EF4444" opacity="0.8"/>
+                  <circle cx="163" cy="43" r="2.5" fill="#F59E0B" opacity="0.8"/>
+                  <circle cx="171" cy="43" r="2.5" fill="#10B981" opacity="0.8"/>
+                  <rect x="156" y="58" width="45" height="3" rx="1.5" fill="#8B5CF6"/>
+                  <rect x="206" y="58" width="60" height="3" rx="1.5" fill="#38BDF8"/>
+                  <rect x="156" y="66" width="80" height="3" rx="1.5" fill="#E2E8F0" opacity="0.6"/>
+                  <rect x="166" y="74" width="110" height="3" rx="1.5" fill="#A78BFA"/>
+                  <rect x="166" y="82" width="70" height="3" rx="1.5" fill="#34D399"/>
+                  <rect x="156" y="90" width="40" height="3" rx="1.5" fill="#F472B6"/>
+                  <rect x="156" y="98" width="120" height="3" rx="1.5" fill="#8B5CF6"/>
+                  <rect x="296" y="60" width="44" height="44" rx="8" fill="#7C3AED" fill-opacity="0.2" stroke="#8B5CF6" stroke-width="1"/>
+                  <path d="M312 75L306 82L312 89" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M324 75L330 82L324 89" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="320" y1="74" x2="316" y2="90" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
+                  <rect x="180" y="176" width="140" height="24" rx="4" fill="#131728" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.5"/>
+                  <line x1="186" y1="184" x2="314" y2="184" stroke="#2E3452" stroke-width="3" stroke-dasharray="3 2"/>
+                  <line x1="186" y1="190" x2="314" y2="190" stroke="#2E3452" stroke-width="3" stroke-dasharray="3 2"/>
+                  <rect x="225" y="193" width="50" height="3" rx="1.5" fill="#8B5CF6" opacity="0.8"/>
+                  <ellipse cx="345" cy="188" rx="8" ry="12" fill="#181C30" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.4"/>
+                  <line x1="345" y1="180" x2="345" y2="186" stroke="#8B5CF6" stroke-width="1"/>
+                  <ellipse cx="105" cy="186" rx="14" ry="4" fill="#080911"/>
+                  <path d="M96 178 L114 178 L110 196 L100 196 Z" fill="#2E344E" stroke="#1E2235" stroke-width="1"/>
+                  <path d="M105 178 Q100 162 93 166 Q98 174 105 178 Z" fill="#10B981"/>
+                  <path d="M105 178 Q110 162 117 166 Q112 174 105 178 Z" fill="#059669"/>
+                  <path d="M105 178 Q105 156 105 156 Q108 168 105 178 Z" fill="#34D399"/>
+                </svg>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="container-xl">
+
+      <!-- Full Footer Content -->
+      <div class="footer-top row g-5 pb-5 mb-5 border-bottom-subtle">
+
+        <!-- Brand -->
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="brand-logo">MM</div>
+            <div>
+              <div class="footer-brand-name">Muhammad Mubashir</div>
+              <div class="footer-brand-role">Web Developer | MERN Stack Developer</div>
+            </div>
+          </div>
+          <p class="footer-about">
+            Building responsive, scalable, and user-focused web applications with modern technologies.
+          </p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon-btn"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/YOUR_X_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="social-icon-btn"><i class="bi bi-twitter-x"></i></a>
+            <a href="mailto:mubashir.code@gmail.com" aria-label="Email" class="social-icon-btn"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="#home"       onclick="scrollToSection(event,'home')">Home</a>
+            <a href="#about"      onclick="scrollToSection(event,'about')">About</a>
+            <a href="#skills"     onclick="scrollToSection(event,'skills')">Skills</a>
+            <a href="#projects"   onclick="scrollToSection(event,'projects')">Projects</a>
+            <a href="#experience" onclick="scrollToSection(event,'experience')">Experience</a>
+            <a href="#services"   onclick="scrollToSection(event,'services')">Services</a>
+            <a href="#contact"    onclick="scrollToSection(event,'contact')">Contact</a>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-col-title">Get In Touch</h4>
+          <div class="footer-contact-items">
+            <a href="mailto:mubashir.code@gmail.com" class="footer-contact-item">
+              <i class="bi bi-envelope"></i><span>mubashir.code@gmail.com</span>
+            </a>
+            <a href="tel:+923137182187" class="footer-contact-item">
+              <i class="bi bi-telephone"></i><span>+92 313 7182187</span>
+            </a>
+            <div class="footer-contact-item">
+              <i class="bi bi-geo-alt"></i><span>Pakistan</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 text-center text-sm-start">
+        <div class="footer-copyright">
+          &copy; 2026 Muhammad Mubashir. All rights reserved.
+        </div>
+        <div class="footer-built">
+          Built with <i class="bi bi-heart-fill text-danger mx-1"></i> using HTML, CSS &amp; Node.js
+        </div>
+        <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+          <span>Back to Top</span>
+          <i class="bi bi-arrow-up"></i>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back to Top floating button -->
+  <button class="back-to-top-fab" id="backToTopFab" onclick="scrollToTop()" aria-label="Back to top" style="display:none;">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- =====================================================
+       BOOTSTRAP 5 JS (CDN)
+  ====================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- =====================================================
+       CUSTOM JAVASCRIPT
+  ====================================================== -->
+  <script src="js/script.js"></script>
+</body>
+</html>

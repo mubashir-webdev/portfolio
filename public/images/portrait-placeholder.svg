@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="340" viewBox="0 0 340 340">
+  <rect width="340" height="340" fill="#0D101C"/>
+  <!-- Background glow -->
+  <radialGradient id="glow" cx="50%" cy="45%" r="45%">
+    <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.3"/>
+    <stop offset="100%" stop-color="#050711" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="340" height="340" fill="url(#glow)"/>
+  <!-- Avatar circle -->
+  <circle cx="170" cy="135" r="65" fill="#1e1b4b" stroke="#7C3AED" stroke-width="2" stroke-opacity="0.5"/>
+  <!-- Body -->
+  <ellipse cx="170" cy="295" rx="95" ry="75" fill="#1e1b4b"/>
+  <!-- Monogram -->
+  <text x="170" y="155" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="900" fill="#8B5CF6">MM</text>
+  <!-- Label -->
+  <text x="170" y="330" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#A1A1AA">Add portrait.jpg to public/images/</text>
+</svg>
