@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <!-- =====================================================
        META TAGS & SEO
   ====================================================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Muhammad Mubashir - Professional Web Developer & MERN Stack Developer. Building responsive, scalable, and modern web applications." />
+  <meta name="description"
+    content="Muhammad Mubashir - Professional Web Developer & MERN Stack Developer. Building responsive, scalable, and modern web applications." />
   <meta name="author" content="Muhammad Mubashir" />
-  <meta name="keywords" content="Muhammad Mubashir, Web Developer, Node.js, JavaScript, Bootstrap, HTML5, CSS3, Express, MongoDB, Portfolio" />
+  <meta name="keywords"
+    content="Muhammad Mubashir, Web Developer, Node.js, JavaScript, Bootstrap, HTML5, CSS3, Express, MongoDB, Portfolio" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Muhammad Mubashir | Web Developer & MERN Stack Developer" />
-  <meta property="og:description" content="Professional portfolio of Muhammad Mubashir – Web Developer & MERN Stack Developer from Pakistan." />
+  <meta property="og:description"
+    content="Professional portfolio of Muhammad Mubashir – Web Developer & MERN Stack Developer from Pakistan." />
   <meta property="og:type" content="website" />
 
   <title>Muhammad Mubashir | Web Developer &amp; MERN Stack Developer</title>
@@ -22,7 +26,8 @@
   ====================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
 
   <!-- =====================================================
        BOOTSTRAP 5 CSS (CDN)
@@ -50,20 +55,28 @@
       <div class="d-flex align-items-center justify-content-between py-3">
 
         <!-- Brand Logo + Name -->
-        <a href="#home" class="brand-link d-flex align-items-center gap-3 text-decoration-none" onclick="scrollToSection(event, 'home')">
+        <a href="#home" class="brand-link d-flex align-items-center gap-3 text-decoration-none"
+          onclick="scrollToSection(event, 'home')">
           <div class="brand-logo">MM</div>
           <span class="brand-name">Muhammad Mubashir</span>
         </a>
 
         <!-- Desktop Nav Links -->
         <nav class="desktop-nav d-none d-md-flex align-items-center gap-1 px-3 py-2 rounded-pill">
-          <a href="#home"       class="nav-link-item active-nav" data-section="home"       onclick="scrollToSection(event, 'home')">Home</a>
-          <a href="#about"      class="nav-link-item"            data-section="about"      onclick="scrollToSection(event, 'about')">About</a>
-          <a href="#skills"     class="nav-link-item"            data-section="skills"     onclick="scrollToSection(event, 'skills')">Skills</a>
-          <a href="#projects"   class="nav-link-item"            data-section="projects"   onclick="scrollToSection(event, 'projects')">Projects</a>
-          <a href="#experience" class="nav-link-item"            data-section="experience" onclick="scrollToSection(event, 'experience')">Experience</a>
-          <a href="#services"   class="nav-link-item"            data-section="services"   onclick="scrollToSection(event, 'services')">Services</a>
-          <a href="#contact"    class="nav-link-item"            data-section="contact"    onclick="scrollToSection(event, 'contact')">Contact</a>
+          <a href="#home" class="nav-link-item active-nav" data-section="home"
+            onclick="scrollToSection(event, 'home')">Home</a>
+          <a href="#about" class="nav-link-item" data-section="about"
+            onclick="scrollToSection(event, 'about')">About</a>
+          <a href="#skills" class="nav-link-item" data-section="skills"
+            onclick="scrollToSection(event, 'skills')">Skills</a>
+          <a href="#projects" class="nav-link-item" data-section="projects"
+            onclick="scrollToSection(event, 'projects')">Projects</a>
+          <a href="#experience" class="nav-link-item" data-section="experience"
+            onclick="scrollToSection(event, 'experience')">Experience</a>
+          <a href="#services" class="nav-link-item" data-section="services"
+            onclick="scrollToSection(event, 'services')">Services</a>
+          <a href="#contact" class="nav-link-item" data-section="contact"
+            onclick="scrollToSection(event, 'contact')">Contact</a>
         </nav>
 
         <!-- Desktop: Theme Toggle + Download CV -->
@@ -72,7 +85,8 @@
             <i class="bi bi-moon-fill theme-icon-dark"></i>
             <i class="bi bi-sun-fill theme-icon-light d-none"></i>
           </button>
-          <a href="/Muhammad-Mubashir-WEB-DEV-CV.pdf" download class="btn-primary-purple d-flex align-items-center gap-2">
+          <a href="/Muhammad-Mubashir-WEB-DEV-CV.pdf" download
+            class="btn-primary-purple d-flex align-items-center gap-2">
             <i class="bi bi-download"></i>
             <span>Download CV</span>
           </a>
@@ -84,7 +98,8 @@
             <i class="bi bi-moon-fill theme-icon-dark"></i>
             <i class="bi bi-sun-fill theme-icon-light d-none"></i>
           </button>
-          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation" onclick="toggleMobileMenu()">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation"
+            onclick="toggleMobileMenu()">
             <i class="bi bi-list" id="menuIcon"></i>
           </button>
         </div>
@@ -96,15 +111,16 @@
     <div class="mobile-menu d-md-none" id="mobileMenu">
       <div class="container-xl">
         <div class="mobile-menu-inner py-3">
-          <a href="#home"       class="mobile-nav-link" onclick="scrollToSection(event, 'home')">Home</a>
-          <a href="#about"      class="mobile-nav-link" onclick="scrollToSection(event, 'about')">About</a>
-          <a href="#skills"     class="mobile-nav-link" onclick="scrollToSection(event, 'skills')">Skills</a>
-          <a href="#projects"   class="mobile-nav-link" onclick="scrollToSection(event, 'projects')">Projects</a>
+          <a href="#home" class="mobile-nav-link" onclick="scrollToSection(event, 'home')">Home</a>
+          <a href="#about" class="mobile-nav-link" onclick="scrollToSection(event, 'about')">About</a>
+          <a href="#skills" class="mobile-nav-link" onclick="scrollToSection(event, 'skills')">Skills</a>
+          <a href="#projects" class="mobile-nav-link" onclick="scrollToSection(event, 'projects')">Projects</a>
           <a href="#experience" class="mobile-nav-link" onclick="scrollToSection(event, 'experience')">Experience</a>
-          <a href="#services"   class="mobile-nav-link" onclick="scrollToSection(event, 'services')">Services</a>
-          <a href="#contact"    class="mobile-nav-link" onclick="scrollToSection(event, 'contact')">Contact</a>
+          <a href="#services" class="mobile-nav-link" onclick="scrollToSection(event, 'services')">Services</a>
+          <a href="#contact" class="mobile-nav-link" onclick="scrollToSection(event, 'contact')">Contact</a>
           <div class="pt-3">
-            <a href="/Muhammad-Mubashir-CV.pdf" download class="btn-primary-purple w-100 d-flex align-items-center justify-content-center gap-2">
+            <a href="/Muhammad-Mubashir-CV.pdf" download
+              class="btn-primary-purple w-100 d-flex align-items-center justify-content-center gap-2">
               <i class="bi bi-download"></i>
               <span>Download CV</span>
             </a>
@@ -130,9 +146,9 @@
 
       <!-- Subtle SVG Background Lines -->
       <svg class="hero-bg-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M-100,200 C300,50 800,450 1400,200" stroke="#FFFFFF" stroke-width="1" fill="none"/>
-        <path d="M-100,450 C400,200 700,600 1400,350" stroke="#FFFFFF" stroke-width="1" fill="none"/>
-        <path d="M-50,650 C500,450 900,750 1500,550" stroke="#8B5CF6" stroke-width="1" fill="none"/>
+        <path d="M-100,200 C300,50 800,450 1400,200" stroke="#FFFFFF" stroke-width="1" fill="none" />
+        <path d="M-100,450 C400,200 700,600 1400,350" stroke="#FFFFFF" stroke-width="1" fill="none" />
+        <path d="M-50,650 C500,450 900,750 1500,550" stroke="#8B5CF6" stroke-width="1" fill="none" />
       </svg>
 
       <div class="container-xl position-relative" style="z-index:10;">
@@ -161,20 +177,24 @@
 
             <!-- Description -->
             <p class="hero-description mb-5">
-              I build responsive, scalable, and user-focused web applications using modern technologies. Specializing in the MERN stack to create performant full-stack solutions that solve real-world problems.
+              I build responsive, scalable, and user-focused web applications using modern technologies. Specializing in
+              the MERN stack to create performant full-stack solutions that solve real-world problems.
             </p>
 
             <!-- Action Buttons -->
             <div class="d-flex flex-wrap gap-3 mb-5 hero-action-buttons">
-              <button class="btn-primary-purple d-flex align-items-center gap-2" onclick="scrollToSection(event, 'projects')">
+              <button class="btn-primary-purple d-flex align-items-center gap-2"
+                onclick="scrollToSection(event, 'projects')">
                 <span>View Projects</span>
                 <i class="bi bi-arrow-right"></i>
               </button>
-              <a href="/Muhammad-Mubashir-WEB-DEV-CV.pdf" download class="btn-secondary-dark d-flex align-items-center gap-2">
+              <a href="/Muhammad-Mubashir-WEB-DEV-CV.pdf" download
+                class="btn-secondary-dark d-flex align-items-center gap-2">
                 <span>Download CV</span>
                 <i class="bi bi-download text-purple-400"></i>
               </a>
-              <button class="btn-secondary-dark d-flex align-items-center gap-2" onclick="scrollToSection(event, 'contact')">
+              <button class="btn-secondary-dark d-flex align-items-center gap-2"
+                onclick="scrollToSection(event, 'contact')">
                 <span>Contact Me</span>
                 <i class="bi bi-envelope text-purple-400"></i>
               </button>
@@ -184,13 +204,16 @@
             <div class="social-row pt-4">
               <span class="social-label">Connect with me</span>
               <div class="d-flex align-items-center gap-3">
-                <a href="https://github.com/mubashir-webdev" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon-btn">
+                <a href="https://github.com/mubashir-webdev" target="_blank" rel="noopener noreferrer"
+                  aria-label="GitHub" class="social-icon-btn">
                   <i class="bi bi-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/muhammad-mubashir-322388329/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
+                <a href="https://www.linkedin.com/in/muhammad-mubashir-322388329/" target="_blank"
+                  rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
                   <i class="bi bi-linkedin"></i>
                 </a>
-                <a href="https://x.com/YOUR_X_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="social-icon-btn">
+                <a href="https://x.com/YOUR_X_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"
+                  class="social-icon-btn">
                   <i class="bi bi-twitter-x"></i>
                 </a>
                 <a href="mailto:mubashir.code@gmail.com" aria-label="Email" class="social-icon-btn">
@@ -217,13 +240,8 @@
               <!-- Portrait Image -->
               <div class="portrait-frame">
                 <div class="portrait-inner">
-                  <img
-                    src="images/portrait.png"
-                    alt="Muhammad Mubashir - Web Developer"
-                    class="portrait-img"
-                    loading="eager"
-                    onerror="this.src='images/portrait-placeholder.svg'; this.onerror=null;"
-                  />
+                  <img src="images/portrait.png" alt="Muhammad Mubashir - Web Developer" class="portrait-img"
+                    loading="eager" onerror="this.src='images/portrait-placeholder.svg'; this.onerror=null;" />
                 </div>
               </div>
 
@@ -300,7 +318,8 @@
               </div>
 
               <p class="section-description mb-4">
-                I'm a passionate MERN Stack Developer who loves turning ideas into reality using clean code and modern technologies. I enjoy building efficient, scalable, and user-friendly web applications.
+                I'm a passionate MERN Stack Developer who loves turning ideas into reality using clean code and modern
+                technologies. I enjoy building efficient, scalable, and user-friendly web applications.
               </p>
 
               <!-- Bullet Points -->
@@ -319,7 +338,8 @@
                 </div>
               </div>
 
-              <button class="btn-secondary-dark d-inline-flex align-items-center gap-2" onclick="scrollToSection(event, 'experience')">
+              <button class="btn-secondary-dark d-inline-flex align-items-center gap-2"
+                onclick="scrollToSection(event, 'experience')">
                 <span>Know More About Me</span>
                 <i class="bi bi-arrow-right text-purple-400"></i>
               </button>
@@ -340,10 +360,13 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="HTML5 Logo">
-                      <path fill="#E44D26" d="M21.576 11.602l8.895 99.646 33.454 9.27 33.565-9.309 8.934-100.015h-84.848z"/>
-                      <path fill="#F16529" d="M64 111.455l27.185-7.535 7.423-83.128h-34.608v90.663z"/>
-                      <path fill="#EBEBEB" d="M64 54.08h-16.71l-1.155-12.936h17.865v-12.925h-31.968l.451 5.06 2.871 32.176h28.646v-11.375zM64 87.05l-.133.036-14.198-3.832-.907-10.158h-12.981l1.802 20.19 26.402 7.33.015-.004v-13.562z"/>
-                      <path fill="#FFFFFF" d="M64 54.08v-11.375h16.721l1.572-17.611h-18.293v-12.925h32.419l-.454 5.06-3.8 42.607h-28.165zM64 87.05v13.566l26.417-7.332 2.5-27.97h-12.987l-1.42 15.908-14.51 3.828z"/>
+                      <path fill="#E44D26"
+                        d="M21.576 11.602l8.895 99.646 33.454 9.27 33.565-9.309 8.934-100.015h-84.848z" />
+                      <path fill="#F16529" d="M64 111.455l27.185-7.535 7.423-83.128h-34.608v90.663z" />
+                      <path fill="#EBEBEB"
+                        d="M64 54.08h-16.71l-1.155-12.936h17.865v-12.925h-31.968l.451 5.06 2.871 32.176h28.646v-11.375zM64 87.05l-.133.036-14.198-3.832-.907-10.158h-12.981l1.802 20.19 26.402 7.33.015-.004v-13.562z" />
+                      <path fill="#FFFFFF"
+                        d="M64 54.08v-11.375h16.721l1.572-17.611h-18.293v-12.925h32.419l-.454 5.06-3.8 42.607h-28.165zM64 87.05v13.566l26.417-7.332 2.5-27.97h-12.987l-1.42 15.908-14.51 3.828z" />
                     </svg>
                   </div>
                   <span class="tech-name">HTML5</span>
@@ -354,10 +377,13 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="CSS3 Logo">
-                      <path fill="#264DE4" d="M21.576 11.602l8.895 99.646 33.454 9.27 33.565-9.309 8.934-100.015h-84.848z"/>
-                      <path fill="#2965F1" d="M64 111.455l27.185-7.535 7.423-83.128h-34.608v90.663z"/>
-                      <path fill="#EBEBEB" d="M64 54.08h-16.71l-1.155-12.936h17.865v-12.925h-31.968l.451 5.06 2.871 32.176h28.646v-11.375zM49.034 68.324l1.17 13.116 13.796 3.725v13.564l-26.402-7.33-1.802-20.19h13.238z"/>
-                      <path fill="#FFFFFF" d="M64 28.219h32.419l-.454 5.06-2.228 24.976h-29.737v11.375h15.566l-1.077 12.06-14.489 3.911v13.566l26.417-7.332 2.5-27.97h-28.916v-11.375h30.156l1.155-12.936h-31.311v-11.345z"/>
+                      <path fill="#264DE4"
+                        d="M21.576 11.602l8.895 99.646 33.454 9.27 33.565-9.309 8.934-100.015h-84.848z" />
+                      <path fill="#2965F1" d="M64 111.455l27.185-7.535 7.423-83.128h-34.608v90.663z" />
+                      <path fill="#EBEBEB"
+                        d="M64 54.08h-16.71l-1.155-12.936h17.865v-12.925h-31.968l.451 5.06 2.871 32.176h28.646v-11.375zM49.034 68.324l1.17 13.116 13.796 3.725v13.564l-26.402-7.33-1.802-20.19h13.238z" />
+                      <path fill="#FFFFFF"
+                        d="M64 28.219h32.419l-.454 5.06-2.228 24.976h-29.737v11.375h15.566l-1.077 12.06-14.489 3.911v13.566l26.417-7.332 2.5-27.97h-28.916v-11.375h30.156l1.155-12.936h-31.311v-11.345z" />
                     </svg>
                   </div>
                   <span class="tech-name">CSS3</span>
@@ -368,8 +394,9 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="Bootstrap Logo">
-                      <rect width="128" height="128" rx="28" fill="#7952B3"/>
-                      <path fill="#FFFFFF" d="M37.5 30h32.8c6.8 0 12 1.6 15.6 4.8 3.6 3.2 5.6 7.6 5.6 12.8 0 4-.9 7.6-3.6 10.8-1.6 2-3.6 3.6-6.4 4.4 3.6 1.2 6.8 3.2 9.2 6 2.4 2.8 3.2 6.8 3.2 11.2 0 6.4-2.4 11.6-6.8 15.2-4 3.2-10 4.8-17.6 4.8H37.5V30zm12 23.2h17.6c3.6 0 6.4-.8 8.4-2.4 2-1.6 2.8-4 2.8-6.8 0-3.2-1-5.2-2.8-6.8-2-1.6-4.8-2-8.4-2H49.5v18zm0 23.6h19.2c4 0 7.2-.8 9.2-2.8 2-1.6 3.2-4.4 3.2-8 0-3.2-1.2-6-3.2-7.6-2-1.6-5.2-2.4-9.6-2.4H49.5v20.8z"/>
+                      <rect width="128" height="128" rx="28" fill="#7952B3" />
+                      <path fill="#FFFFFF"
+                        d="M37.5 30h32.8c6.8 0 12 1.6 15.6 4.8 3.6 3.2 5.6 7.6 5.6 12.8 0 4-.9 7.6-3.6 10.8-1.6 2-3.6 3.6-6.4 4.4 3.6 1.2 6.8 3.2 9.2 6 2.4 2.8 3.2 6.8 3.2 11.2 0 6.4-2.4 11.6-6.8 15.2-4 3.2-10 4.8-17.6 4.8H37.5V30zm12 23.2h17.6c3.6 0 6.4-.8 8.4-2.4 2-1.6 2.8-4 2.8-6.8 0-3.2-1-5.2-2.8-6.8-2-1.6-4.8-2-8.4-2H49.5v18zm0 23.6h19.2c4 0 7.2-.8 9.2-2.8 2-1.6 3.2-4.4 3.2-8 0-3.2-1.2-6-3.2-7.6-2-1.6-5.2-2.4-9.6-2.4H49.5v20.8z" />
                     </svg>
                   </div>
                   <span class="tech-name">Bootstrap</span>
@@ -380,8 +407,9 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="JavaScript Logo">
-                      <rect width="128" height="128" rx="20" fill="#F7DF1E"/>
-                      <path fill="#000000" d="M67.31 100.56c2.46 3.99 6.22 6.57 12.28 6.57 5.12 0 8.43-2.58 8.43-6.15 0-4.31-3.45-5.84-9.22-8.37l-3.15-1.38c-9.06-3.84-15.05-8.68-15.05-18.89 0-10.45 8.14-18.43 21.05-18.43 9.37 0 15.74 3.3 20.35 11.37l-9.98 6.45c-2.3-4.15-5.38-6.14-10.37-6.14-4.61 0-7.37 2.46-7.37 5.53 0 3.84 2.92 5.37 8.45 7.76l3.15 1.38c11.06 4.69 17.2 9.22 17.2 19.81 0 12.37-9.68 19.35-23.81 19.35-13.67 0-21.89-6.45-25.73-15.21l10.8-6.61zM28.3 100.02c2.46 4.3 5.68 7.14 11.44 7.14 5.76 0 9.37-2.77 9.37-13.44V54.55h13.98v39.47c0 18.28-10.75 25.96-26.04 25.96-12.21 0-19.89-6.07-23.73-14.29l15-5.67z"/>
+                      <rect width="128" height="128" rx="20" fill="#F7DF1E" />
+                      <path fill="#000000"
+                        d="M67.31 100.56c2.46 3.99 6.22 6.57 12.28 6.57 5.12 0 8.43-2.58 8.43-6.15 0-4.31-3.45-5.84-9.22-8.37l-3.15-1.38c-9.06-3.84-15.05-8.68-15.05-18.89 0-10.45 8.14-18.43 21.05-18.43 9.37 0 15.74 3.3 20.35 11.37l-9.98 6.45c-2.3-4.15-5.38-6.14-10.37-6.14-4.61 0-7.37 2.46-7.37 5.53 0 3.84 2.92 5.37 8.45 7.76l3.15 1.38c11.06 4.69 17.2 9.22 17.2 19.81 0 12.37-9.68 19.35-23.81 19.35-13.67 0-21.89-6.45-25.73-15.21l10.8-6.61zM28.3 100.02c2.46 4.3 5.68 7.14 11.44 7.14 5.76 0 9.37-2.77 9.37-13.44V54.55h13.98v39.47c0 18.28-10.75 25.96-26.04 25.96-12.21 0-19.89-6.07-23.73-14.29l15-5.67z" />
                     </svg>
                   </div>
                   <span class="tech-name">JavaScript</span>
@@ -392,9 +420,10 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="Node.js Logo">
-                      <path fill="#539E43" d="M64 10.5L14.3 39.2v57.6L64 115.5l49.7-28.7V39.2L64 10.5z"/>
-                      <path fill="#397A31" d="M64 10.5L14.3 39.2v57.6L64 115.5V10.5z"/>
-                      <path fill="#FFFFFF" d="M42.5 73.2c0 3.6 2.1 6 6 6s6-2.4 6-6V51.2h-6v22c0 1.2-.5 2-1.6 2s-1.6-.8-1.6-2V71.2H42.5v2zM64.5 75.2c4 .4 8-2.4 8-7.6v-2.8c0-3.6-1.6-5.6-5.2-6.8l-3.2-1.2c-1.6-.4-2-1.2-2-2.4v-1.6c0-1.2.8-2 2-2s1.6.8 1.6 2v1.6h5.6v-1.6c0-4-2.4-6.8-7.2-6.8-4.8 0-7.6 2.8-7.6 7.2v1.2c0 3.6 1.6 6 5.2 7.2l3.2 1.2c1.6.4 2 1.2 2 2.4v2c0 1.2-.8 2-2 2s-2-.8-2-2V71.2h-5.6v2.4c0 3.6 2 6 5.2 5.6z"/>
+                      <path fill="#539E43" d="M64 10.5L14.3 39.2v57.6L64 115.5l49.7-28.7V39.2L64 10.5z" />
+                      <path fill="#397A31" d="M64 10.5L14.3 39.2v57.6L64 115.5V10.5z" />
+                      <path fill="#FFFFFF"
+                        d="M42.5 73.2c0 3.6 2.1 6 6 6s6-2.4 6-6V51.2h-6v22c0 1.2-.5 2-1.6 2s-1.6-.8-1.6-2V71.2H42.5v2zM64.5 75.2c4 .4 8-2.4 8-7.6v-2.8c0-3.6-1.6-5.6-5.2-6.8l-3.2-1.2c-1.6-.4-2-1.2-2-2.4v-1.6c0-1.2.8-2 2-2s1.6.8 1.6 2v1.6h5.6v-1.6c0-4-2.4-6.8-7.2-6.8-4.8 0-7.6 2.8-7.6 7.2v1.2c0 3.6 1.6 6 5.2 7.2l3.2 1.2c1.6.4 2 1.2 2 2.4v2c0 1.2-.8 2-2 2s-2-.8-2-2V71.2h-5.6v2.4c0 3.6 2 6 5.2 5.6z" />
                     </svg>
                   </div>
                   <span class="tech-name">Node.js</span>
@@ -405,9 +434,10 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="Express.js Logo">
-                      <rect width="128" height="128" rx="24" fill="#000000"/>
-                      <path fill="#FFFFFF" d="M32 44h15l13.5 22L74 44h15L67.5 72 89 100H74L59.5 77 45 100H30l21.5-28L32 44z"/>
-                      <circle cx="96" cy="80" r="8" fill="#68A063"/>
+                      <rect width="128" height="128" rx="24" fill="#000000" />
+                      <path fill="#FFFFFF"
+                        d="M32 44h15l13.5 22L74 44h15L67.5 72 89 100H74L59.5 77 45 100H30l21.5-28L32 44z" />
+                      <circle cx="96" cy="80" r="8" fill="#68A063" />
                     </svg>
                   </div>
                   <span class="tech-name">Express.js</span>
@@ -418,10 +448,10 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="MongoDB Logo">
-                      <path fill="#47A248" d="M64 8s-34 31.2-34 60.8c0 20.8 15.2 37.2 34 39.2V8z"/>
-                      <path fill="#499D4A" d="M64 8s34 31.2 34 60.8c0 20.8-15.2 37.2-34 39.2V8z"/>
-                      <path fill="#3F8E41" d="M64 108v12c0 2-.8 4-2 4s-2-2-2-4v-12h4z"/>
-                      <path fill="#59B45A" d="M64 26c-4.8 14-14 32.8-14 44 0 10 6.4 18.4 14 20.4V26z"/>
+                      <path fill="#47A248" d="M64 8s-34 31.2-34 60.8c0 20.8 15.2 37.2 34 39.2V8z" />
+                      <path fill="#499D4A" d="M64 8s34 31.2 34 60.8c0 20.8-15.2 37.2-34 39.2V8z" />
+                      <path fill="#3F8E41" d="M64 108v12c0 2-.8 4-2 4s-2-2-2-4v-12h4z" />
+                      <path fill="#59B45A" d="M64 26c-4.8 14-14 32.8-14 44 0 10 6.4 18.4 14 20.4V26z" />
                     </svg>
                   </div>
                   <span class="tech-name">MongoDB</span>
@@ -432,9 +462,11 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="MySQL Logo">
-                      <rect width="128" height="128" rx="24" fill="#00758F"/>
-                      <path fill="#F29111" d="M102 62c-2.4-3.2-6.4-5.6-11.2-6.4 2.4-4.8 1.6-10.8-2.4-15.2-5.2-6-14.4-6.8-20.4-1.6-2.4 2-4 4.8-4.8 8-8.8-6.4-20.8-9.6-32.8-8.8-24.8 1.6-46.4 18.4-55.2 41.6-2.8 7.6-4 15.6-3.6 23.6.4 8 2.8 16 7.2 22.8 2.8 4.4 6.8 8 11.6 10.4 5.6 2.8 12 4 18.4 3.6 11.2-.8 22-5.6 30.4-13.6 14.4-13.6 22-33.6 20.4-53.6 5.6 1.2 10.8 4 15.2 8 3.2 2.8 5.6 6.4 7.2 10.4 1.6-4.8 3.6-9.6 6.7-14v-1.8z"/>
-                      <path fill="#FFFFFF" d="M36 84c-3.2 0-5.6-.8-7.2-2.4-1.6-1.6-2.4-4-2.4-7.2V44h8v29c0 1.2.4 2 1.2 2.4.8.4 1.6.4 2.4.4V84zM47.5 84V60h-6v-6h6v-2.5c0-3.5 1-6 3-7.5 2-1.5 5-2 9-2h5.5v7H60c-2 0-3.5.4-4 1.2-.5.8-.8 2-.8 3.8V54h9.5v6H55.5v24h-8z"/>
+                      <rect width="128" height="128" rx="24" fill="#00758F" />
+                      <path fill="#F29111"
+                        d="M102 62c-2.4-3.2-6.4-5.6-11.2-6.4 2.4-4.8 1.6-10.8-2.4-15.2-5.2-6-14.4-6.8-20.4-1.6-2.4 2-4 4.8-4.8 8-8.8-6.4-20.8-9.6-32.8-8.8-24.8 1.6-46.4 18.4-55.2 41.6-2.8 7.6-4 15.6-3.6 23.6.4 8 2.8 16 7.2 22.8 2.8 4.4 6.8 8 11.6 10.4 5.6 2.8 12 4 18.4 3.6 11.2-.8 22-5.6 30.4-13.6 14.4-13.6 22-33.6 20.4-53.6 5.6 1.2 10.8 4 15.2 8 3.2 2.8 5.6 6.4 7.2 10.4 1.6-4.8 3.6-9.6 6.7-14v-1.8z" />
+                      <path fill="#FFFFFF"
+                        d="M36 84c-3.2 0-5.6-.8-7.2-2.4-1.6-1.6-2.4-4-2.4-7.2V44h8v29c0 1.2.4 2 1.2 2.4.8.4 1.6.4 2.4.4V84zM47.5 84V60h-6v-6h6v-2.5c0-3.5 1-6 3-7.5 2-1.5 5-2 9-2h5.5v7H60c-2 0-3.5.4-4 1.2-.5.8-.8 2-.8 3.8V54h9.5v6H55.5v24h-8z" />
                     </svg>
                   </div>
                   <span class="tech-name">MySQL</span>
@@ -445,10 +477,10 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="Firebase Logo">
-                      <path fill="#FFA000" d="M23.2 98.7l15.2-80.8c.4-2.4 3.6-3.6 5.2-1.6l18.4 34-38.8 48.4z"/>
-                      <path fill="#F57C00" d="M68.4 55.2l12.4-23.6c1.2-2.4 4.8-2.4 6 0l18 67.1-36.4-43.5z"/>
-                      <path fill="#FFCA28" d="M23.2 98.7L62.4 60.5l12 22.8-51.2 15.4z"/>
-                      <path fill="#FFC107" d="M23.2 98.7l39.2 22.4c1.2.8 2.8.8 4 0l38.4-22.4-16.4-6-65.2 6z"/>
+                      <path fill="#FFA000" d="M23.2 98.7l15.2-80.8c.4-2.4 3.6-3.6 5.2-1.6l18.4 34-38.8 48.4z" />
+                      <path fill="#F57C00" d="M68.4 55.2l12.4-23.6c1.2-2.4 4.8-2.4 6 0l18 67.1-36.4-43.5z" />
+                      <path fill="#FFCA28" d="M23.2 98.7L62.4 60.5l12 22.8-51.2 15.4z" />
+                      <path fill="#FFC107" d="M23.2 98.7l39.2 22.4c1.2.8 2.8.8 4 0l38.4-22.4-16.4-6-65.2 6z" />
                     </svg>
                   </div>
                   <span class="tech-name">Firebase</span>
@@ -459,10 +491,11 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg" aria-label="Git Logo">
-                      <path fill="#F05032" d="M116.8 58.8L69.2 11.2c-3.2-3.2-8.4-3.2-11.6 0L46.8 22.4l14.4 14.4c3.2-1.2 7.2-.4 9.6 2.4 2.4 2.4 3.2 6.4 2 9.6l14 14c3.2-1.2 7.2-.4 9.6 2.4 3.2 3.2 3.2 8.4 0 11.6-3.2 3.2-8.4 3.2-11.6 0-2.8-2.8-3.6-6.8-2-10l-13.2-13.2v28.4c1.2.8 2 2 2 3.6 0 3.2-2.8 6-6 6s-6-2.8-6-6c0-2 1.2-3.6 2-4.8V50.8c-.8-1.2-2-2.8-2-4.8 0-2.4 1.6-4.8 4-5.6L46.8 26.4 11.2 62c-3.2 3.2-3.2 8.4 0 11.6l47.6 47.6c3.2 3.2 8.4 3.2 11.6 0l46.4-46.8c3.2-3.2 3.2-8.4 0-11.6z"/>
-                      <circle cx="84" cy="82" r="8" fill="#FFFFFF"/>
-                      <circle cx="84" cy="46" r="8" fill="#FFFFFF"/>
-                      <circle cx="60" cy="38" r="8" fill="#FFFFFF"/>
+                      <path fill="#F05032"
+                        d="M116.8 58.8L69.2 11.2c-3.2-3.2-8.4-3.2-11.6 0L46.8 22.4l14.4 14.4c3.2-1.2 7.2-.4 9.6 2.4 2.4 2.4 3.2 6.4 2 9.6l14 14c3.2-1.2 7.2-.4 9.6 2.4 3.2 3.2 3.2 8.4 0 11.6-3.2 3.2-8.4 3.2-11.6 0-2.8-2.8-3.6-6.8-2-10l-13.2-13.2v28.4c1.2.8 2 2 2 3.6 0 3.2-2.8 6-6 6s-6-2.8-6-6c0-2 1.2-3.6 2-4.8V50.8c-.8-1.2-2-2.8-2-4.8 0-2.4 1.6-4.8 4-5.6L46.8 26.4 11.2 62c-3.2 3.2-3.2 8.4 0 11.6l47.6 47.6c3.2 3.2 8.4 3.2 11.6 0l46.4-46.8c3.2-3.2 3.2-8.4 0-11.6z" />
+                      <circle cx="84" cy="82" r="8" fill="#FFFFFF" />
+                      <circle cx="84" cy="46" r="8" fill="#FFFFFF" />
+                      <circle cx="60" cy="38" r="8" fill="#FFFFFF" />
                     </svg>
                   </div>
                   <span class="tech-name">Git</span>
@@ -473,7 +506,8 @@
                 <div class="tech-card">
                   <div class="tech-icon-wrap">
                     <svg viewBox="0 0 128 128" class="tech-svg tech-svg-adaptive" aria-label="GitHub Logo">
-                      <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M64 8C33.1 8 8 33.1 8 64c0 24.8 16.1 45.8 38.3 53.2 2.8.5 3.8-1.2 3.8-2.7v-9.5c-15.6 3.4-18.9-7.5-18.9-7.5-2.5-6.5-6.2-8.2-6.2-8.2-5.1-3.5.4-3.4.4-3.4 5.6.4 8.6 5.8 8.6 5.8 5 8.6 13.1 6.1 16.3 4.7.5-3.6 2-6.1 3.6-7.5-12.4-1.4-25.5-6.2-25.5-27.6 0-6.1 2.2-11.1 5.8-15-0.6-1.4-2.5-7.1.6-14.8 0 0 4.7-1.5 15.4 5.7 4.5-1.2 9.2-1.9 14-1.9s9.5.6 14 1.9c10.7-7.2 15.4-5.7 15.4-5.7 3.1 7.7 1.2 13.4.6 14.8 3.6 3.9 5.8 8.9 5.8 15 0 21.5-13.1 26.2-25.6 27.6 2 1.7 3.8 5.2 3.8 10.5v15.6c0 1.5 1 3.2 3.8 2.7C111.9 109.8 120 88.8 120 64 120 33.1 94.9 8 64 8z"/>
+                      <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M64 8C33.1 8 8 33.1 8 64c0 24.8 16.1 45.8 38.3 53.2 2.8.5 3.8-1.2 3.8-2.7v-9.5c-15.6 3.4-18.9-7.5-18.9-7.5-2.5-6.5-6.2-8.2-6.2-8.2-5.1-3.5.4-3.4.4-3.4 5.6.4 8.6 5.8 8.6 5.8 5 8.6 13.1 6.1 16.3 4.7.5-3.6 2-6.1 3.6-7.5-12.4-1.4-25.5-6.2-25.5-27.6 0-6.1 2.2-11.1 5.8-15-0.6-1.4-2.5-7.1.6-14.8 0 0 4.7-1.5 15.4 5.7 4.5-1.2 9.2-1.9 14-1.9s9.5.6 14 1.9c10.7-7.2 15.4-5.7 15.4-5.7 3.1 7.7 1.2 13.4.6 14.8 3.6 3.9 5.8 8.9 5.8 15 0 21.5-13.1 26.2-25.6 27.6 2 1.7 3.8 5.2 3.8 10.5v15.6c0 1.5 1 3.2 3.8 2.7C111.9 109.8 120 88.8 120 64 120 33.1 94.9 8 64 8z" />
                     </svg>
                   </div>
                   <span class="tech-name">GitHub</span>
@@ -572,7 +606,8 @@
       <div class="container-xl">
 
         <!-- Section Header -->
-        <div class="d-flex flex-column flex-sm-row align-items-sm-end justify-content-between mb-5 gap-3 reveal-fade-up">
+        <div
+          class="d-flex flex-column flex-sm-row align-items-sm-end justify-content-between mb-5 gap-3 reveal-fade-up">
           <div class="d-flex align-items-center gap-3">
             <div class="section-icon-box"><i class="bi bi-stars"></i></div>
             <div>
@@ -600,17 +635,20 @@
               </div>
               <div class="project-body">
                 <h3 class="project-title">College Management System</h3>
-                <p class="project-desc">A complete solution to manage students, faculty, courses, attendance and grades.</p>
+                <p class="project-desc">A complete solution to manage students, faculty, courses, attendance and grades.
+                </p>
                 <div class="project-tags">
                   <span class="project-tag">Full Stack</span>
                   <span class="project-tag">Bootstrap</span>
                   <span class="project-tag">JWT</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://your-college-management-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                  <a href="https://your-college-management-demo.com" target="_blank" rel="noopener noreferrer"
+                    class="project-btn-live" onclick="event.stopPropagation();">
                     <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
                   </a>
-                  <a href="https://github.com/YOUR_GITHUB_USERNAME/college-management-system" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/college-management-system" target="_blank"
+                    rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
                     <span>GitHub</span><i class="bi bi-github"></i>
                   </a>
                 </div>
@@ -636,10 +674,12 @@
                   <span class="project-tag">Stripe</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://your-ecommerce-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                  <a href="https://your-ecommerce-demo.com" target="_blank" rel="noopener noreferrer"
+                    class="project-btn-live" onclick="event.stopPropagation();">
                     <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
                   </a>
-                  <a href="https://github.com/YOUR_GITHUB_USERNAME/ecommerce-platform" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/ecommerce-platform" target="_blank"
+                    rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
                     <span>GitHub</span><i class="bi bi-github"></i>
                   </a>
                 </div>
@@ -665,10 +705,12 @@
                   <span class="project-tag">Node.js</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://your-chat-app-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                  <a href="https://your-chat-app-demo.com" target="_blank" rel="noopener noreferrer"
+                    class="project-btn-live" onclick="event.stopPropagation();">
                     <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
                   </a>
-                  <a href="https://github.com/YOUR_GITHUB_USERNAME/realtime-chat-app" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/realtime-chat-app" target="_blank"
+                    rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
                     <span>GitHub</span><i class="bi bi-github"></i>
                   </a>
                 </div>
@@ -694,10 +736,12 @@
                   <span class="project-tag">Bootstrap</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://your-admin-dashboard-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                  <a href="https://your-admin-dashboard-demo.com" target="_blank" rel="noopener noreferrer"
+                    class="project-btn-live" onclick="event.stopPropagation();">
                     <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
                   </a>
-                  <a href="https://github.com/YOUR_GITHUB_USERNAME/admin-dashboard" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/admin-dashboard" target="_blank"
+                    rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
                     <span>GitHub</span><i class="bi bi-github"></i>
                   </a>
                 </div>
@@ -723,10 +767,12 @@
                   <span class="project-tag">JWT</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://your-auth-system-demo.com" target="_blank" rel="noopener noreferrer" class="project-btn-live" onclick="event.stopPropagation();">
+                  <a href="https://your-auth-system-demo.com" target="_blank" rel="noopener noreferrer"
+                    class="project-btn-live" onclick="event.stopPropagation();">
                     <span>Live Demo</span><i class="bi bi-box-arrow-up-right"></i>
                   </a>
-                  <a href="https://github.com/YOUR_GITHUB_USERNAME/authentication-system" target="_blank" rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME/authentication-system" target="_blank"
+                    rel="noopener noreferrer" class="project-btn-github" onclick="event.stopPropagation();">
                     <span>GitHub</span><i class="bi bi-github"></i>
                   </a>
                 </div>
@@ -737,11 +783,96 @@
         </div>
       </div>
 
-      <div id="modal-college"   class="project-modal" onclick="closeModal('modal-college')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-college')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-college.jpg" alt="College Management System" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">College Management System</h3><p class="modal-desc">A complete solution to manage students, faculty, courses, attendance and grades. Built using Node.js and Express with JWT authentication and a modern Bootstrap interface.</p><div class="project-tags mb-4"><span class="project-tag">Full Stack</span><span class="project-tag">Bootstrap</span><span class="project-tag">JWT</span></div><div class="d-flex gap-3"><a href="https://your-college-management-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/college-management-system" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
-      <div id="modal-ecommerce" class="project-modal" onclick="closeModal('modal-ecommerce')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-ecommerce')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-ecommerce.jpg" alt="E-Commerce Platform" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">E-Commerce Platform</h3><p class="modal-desc">Full-featured e-commerce platform with cart, checkout, and Stripe payment integration. Node.js backend with MongoDB database.</p><div class="project-tags mb-4"><span class="project-tag">Node.js</span><span class="project-tag">Express</span><span class="project-tag">Stripe</span></div><div class="d-flex gap-3"><a href="https://your-ecommerce-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/ecommerce-platform" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
-      <div id="modal-chat"      class="project-modal" onclick="closeModal('modal-chat')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-chat')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-chat.jpg" alt="Real-Time Chat App" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">Real-Time Chat App</h3><p class="modal-desc">Real-time chat application with rooms, private messaging and authentication using Socket.io, JavaScript and Node.js.</p><div class="project-tags mb-4"><span class="project-tag">Socket.io</span><span class="project-tag">JavaScript</span><span class="project-tag">Node.js</span></div><div class="d-flex gap-3"><a href="https://your-chat-app-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/realtime-chat-app" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
-      <div id="modal-dashboard"  class="project-modal" onclick="closeModal('modal-dashboard')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-dashboard')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-dashboard.jpg" alt="Admin Dashboard" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">Admin Dashboard</h3><p class="modal-desc">Analytics dashboard with charts, user management, product listings and detailed reports using JavaScript and Chart.js.</p><div class="project-tags mb-4"><span class="project-tag">JavaScript</span><span class="project-tag">Chart.js</span><span class="project-tag">Bootstrap</span></div><div class="d-flex gap-3"><a href="https://your-admin-dashboard-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/admin-dashboard" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
-      <div id="modal-auth"       class="project-modal" onclick="closeModal('modal-auth')"><div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn" onclick="closeModal('modal-auth')"><i class="bi bi-x-lg"></i></button><div class="modal-img-wrap"><img src="images/project-auth.jpg" alt="Authentication System" class="modal-img" onerror="this.style.display='none';" /></div><h3 class="modal-title">Authentication System</h3><p class="modal-desc">Secure authentication system with login, register, forgot password, JWT tokens and protected routes using Node.js and Express.</p><div class="project-tags mb-4"><span class="project-tag">Node.js</span><span class="project-tag">Express</span><span class="project-tag">JWT</span></div><div class="d-flex gap-3"><a href="https://your-auth-system-demo.com" target="_blank" class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i class="bi bi-box-arrow-up-right"></i></a><a href="https://github.com/YOUR_GITHUB_USERNAME/authentication-system" target="_blank" class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i class="bi bi-github"></i></a></div></div></div>
+      <div id="modal-college" class="project-modal" onclick="closeModal('modal-college')">
+        <div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn"
+            onclick="closeModal('modal-college')"><i class="bi bi-x-lg"></i></button>
+          <div class="modal-img-wrap"><img src="images/project-college.jpg" alt="College Management System"
+              class="modal-img" onerror="this.style.display='none';" /></div>
+          <h3 class="modal-title">College Management System</h3>
+          <p class="modal-desc">A complete solution to manage students, faculty, courses, attendance and grades. Built
+            using Node.js and Express with JWT authentication and a modern Bootstrap interface.</p>
+          <div class="project-tags mb-4"><span class="project-tag">Full Stack</span><span
+              class="project-tag">Bootstrap</span><span class="project-tag">JWT</span></div>
+          <div class="d-flex gap-3"><a href="https://your-college-management-demo.com" target="_blank"
+              class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i
+                class="bi bi-box-arrow-up-right"></i></a><a
+              href="https://github.com/YOUR_GITHUB_USERNAME/college-management-system" target="_blank"
+              class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i
+                class="bi bi-github"></i></a></div>
+        </div>
+      </div>
+      <div id="modal-ecommerce" class="project-modal" onclick="closeModal('modal-ecommerce')">
+        <div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn"
+            onclick="closeModal('modal-ecommerce')"><i class="bi bi-x-lg"></i></button>
+          <div class="modal-img-wrap"><img src="images/project-ecommerce.jpg" alt="E-Commerce Platform"
+              class="modal-img" onerror="this.style.display='none';" /></div>
+          <h3 class="modal-title">E-Commerce Platform</h3>
+          <p class="modal-desc">Full-featured e-commerce platform with cart, checkout, and Stripe payment integration.
+            Node.js backend with MongoDB database.</p>
+          <div class="project-tags mb-4"><span class="project-tag">Node.js</span><span
+              class="project-tag">Express</span><span class="project-tag">Stripe</span></div>
+          <div class="d-flex gap-3"><a href="https://your-ecommerce-demo.com" target="_blank"
+              class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i
+                class="bi bi-box-arrow-up-right"></i></a><a
+              href="https://github.com/YOUR_GITHUB_USERNAME/ecommerce-platform" target="_blank"
+              class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i
+                class="bi bi-github"></i></a></div>
+        </div>
+      </div>
+      <div id="modal-chat" class="project-modal" onclick="closeModal('modal-chat')">
+        <div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn"
+            onclick="closeModal('modal-chat')"><i class="bi bi-x-lg"></i></button>
+          <div class="modal-img-wrap"><img src="images/project-chat.jpg" alt="Real-Time Chat App" class="modal-img"
+              onerror="this.style.display='none';" /></div>
+          <h3 class="modal-title">Real-Time Chat App</h3>
+          <p class="modal-desc">Real-time chat application with rooms, private messaging and authentication using
+            Socket.io, JavaScript and Node.js.</p>
+          <div class="project-tags mb-4"><span class="project-tag">Socket.io</span><span
+              class="project-tag">JavaScript</span><span class="project-tag">Node.js</span></div>
+          <div class="d-flex gap-3"><a href="https://your-chat-app-demo.com" target="_blank"
+              class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i
+                class="bi bi-box-arrow-up-right"></i></a><a
+              href="https://github.com/YOUR_GITHUB_USERNAME/realtime-chat-app" target="_blank"
+              class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i
+                class="bi bi-github"></i></a></div>
+        </div>
+      </div>
+      <div id="modal-dashboard" class="project-modal" onclick="closeModal('modal-dashboard')">
+        <div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn"
+            onclick="closeModal('modal-dashboard')"><i class="bi bi-x-lg"></i></button>
+          <div class="modal-img-wrap"><img src="images/project-dashboard.jpg" alt="Admin Dashboard" class="modal-img"
+              onerror="this.style.display='none';" /></div>
+          <h3 class="modal-title">Admin Dashboard</h3>
+          <p class="modal-desc">Analytics dashboard with charts, user management, product listings and detailed reports
+            using JavaScript and Chart.js.</p>
+          <div class="project-tags mb-4"><span class="project-tag">JavaScript</span><span
+              class="project-tag">Chart.js</span><span class="project-tag">Bootstrap</span></div>
+          <div class="d-flex gap-3"><a href="https://your-admin-dashboard-demo.com" target="_blank"
+              class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i
+                class="bi bi-box-arrow-up-right"></i></a><a
+              href="https://github.com/YOUR_GITHUB_USERNAME/admin-dashboard" target="_blank"
+              class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i
+                class="bi bi-github"></i></a></div>
+        </div>
+      </div>
+      <div id="modal-auth" class="project-modal" onclick="closeModal('modal-auth')">
+        <div class="project-modal-content" onclick="event.stopPropagation();"><button class="modal-close-btn"
+            onclick="closeModal('modal-auth')"><i class="bi bi-x-lg"></i></button>
+          <div class="modal-img-wrap"><img src="images/project-auth.jpg" alt="Authentication System" class="modal-img"
+              onerror="this.style.display='none';" /></div>
+          <h3 class="modal-title">Authentication System</h3>
+          <p class="modal-desc">Secure authentication system with login, register, forgot password, JWT tokens and
+            protected routes using Node.js and Express.</p>
+          <div class="project-tags mb-4"><span class="project-tag">Node.js</span><span
+              class="project-tag">Express</span><span class="project-tag">JWT</span></div>
+          <div class="d-flex gap-3"><a href="https://your-auth-system-demo.com" target="_blank"
+              class="btn-primary-purple d-flex align-items-center gap-2"><span>Visit Live Demo</span><i
+                class="bi bi-box-arrow-up-right"></i></a><a
+              href="https://github.com/YOUR_GITHUB_USERNAME/authentication-system" target="_blank"
+              class="btn-secondary-dark d-flex align-items-center gap-2"><span>View Source</span><i
+                class="bi bi-github"></i></a></div>
+        </div>
+      </div>
     </section>
 
     <!-- =================================================
@@ -776,7 +907,8 @@
                     </div>
                     <h3 class="exp-role">Web Developer Intern</h3>
                     <div class="exp-company"><i class="bi bi-building"></i> CodeAlpha</div>
-                    <p class="exp-desc">Worked on MERN stack projects, built responsive UIs and integrated REST APIs.</p>
+                    <p class="exp-desc">Worked on MERN stack projects, built responsive UIs and integrated REST APIs.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -791,7 +923,8 @@
                     </div>
                     <h3 class="exp-role">Freelance Developer</h3>
                     <div class="exp-company"><i class="bi bi-building"></i> Self-Employed</div>
-                    <p class="exp-desc">Building custom web applications for clients worldwide. Focused on quality &amp; performance.</p>
+                    <p class="exp-desc">Building custom web applications for clients worldwide. Focused on quality &amp;
+                      performance.</p>
                   </div>
                 </div>
               </div>
@@ -837,7 +970,8 @@
                 </div>
                 <h3 class="exp-role">Freelance Developer</h3>
                 <div class="exp-company">Self-Employed</div>
-                <p class="exp-desc">Building custom web applications for clients worldwide. Focused on quality &amp; performance.</p>
+                <p class="exp-desc">Building custom web applications for clients worldwide. Focused on quality &amp;
+                  performance.</p>
               </div>
             </div>
             <div class="exp-mobile-item">
@@ -867,7 +1001,8 @@
         <!-- Section Header -->
         <div class="text-center mb-5 reveal-fade-up">
           <h2 class="section-title-lg">What I Offer</h2>
-          <p class="section-subtitle">Comprehensive full-stack engineering tailored for scalable products and clean interfaces.</p>
+          <p class="section-subtitle">Comprehensive full-stack engineering tailored for scalable products and clean
+            interfaces.</p>
         </div>
 
         <div class="row g-4">
@@ -876,7 +1011,8 @@
             <div class="service-card">
               <div class="service-icon-box"><i class="bi bi-layers"></i></div>
               <h3 class="service-title">Full-Stack Development</h3>
-              <p class="service-desc">Complete web applications using MERN stack with clean architecture and best practices.</p>
+              <p class="service-desc">Complete web applications using MERN stack with clean architecture and best
+                practices.</p>
               <div class="service-footer">
                 <span class="service-dot"></span>
                 <span class="service-ready">Production Ready</span>
@@ -888,7 +1024,8 @@
             <div class="service-card">
               <div class="service-icon-box"><i class="bi bi-layout-text-sidebar-reverse"></i></div>
               <h3 class="service-title">Frontend Development</h3>
-              <p class="service-desc">Responsive &amp; modern UIs using React, Bootstrap and CSS with pixel-perfect attention to detail.</p>
+              <p class="service-desc">Responsive &amp; modern UIs using React, Bootstrap and CSS with pixel-perfect
+                attention to detail.</p>
               <div class="service-footer">
                 <span class="service-dot"></span>
                 <span class="service-ready">Production Ready</span>
@@ -900,7 +1037,8 @@
             <div class="service-card">
               <div class="service-icon-box"><i class="bi bi-server"></i></div>
               <h3 class="service-title">Backend Development</h3>
-              <p class="service-desc">RESTful APIs, authentication and server-side logic using Node.js and Express.js.</p>
+              <p class="service-desc">RESTful APIs, authentication and server-side logic using Node.js and Express.js.
+              </p>
               <div class="service-footer">
                 <span class="service-dot"></span>
                 <span class="service-ready">Production Ready</span>
@@ -912,7 +1050,8 @@
             <div class="service-card">
               <div class="service-icon-box"><i class="bi bi-database"></i></div>
               <h3 class="service-title">Database Management</h3>
-              <p class="service-desc">MongoDB design, queries, indexing and database optimization for scalable applications.</p>
+              <p class="service-desc">MongoDB design, queries, indexing and database optimization for scalable
+                applications.</p>
               <div class="service-footer">
                 <span class="service-dot"></span>
                 <span class="service-ready">Production Ready</span>
@@ -936,7 +1075,8 @@
             <div class="service-card">
               <div class="service-icon-box"><i class="bi bi-phone"></i></div>
               <h3 class="service-title">Responsive Design</h3>
-              <p class="service-desc">Pixel-perfect responsive websites that look great on mobile, tablet, and desktop screens.</p>
+              <p class="service-desc">Pixel-perfect responsive websites that look great on mobile, tablet, and desktop
+                screens.</p>
               <div class="service-footer">
                 <span class="service-dot"></span>
                 <span class="service-ready">Production Ready</span>
@@ -1002,11 +1142,41 @@
 
               <!-- Mobile Steps (Vertical) -->
               <div class="d-sm-none workflow-steps-mobile">
-                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-clipboard-check"></i></div><div><span class="workflow-num">01</span><h4 class="workflow-title mb-0">Understand</h4><p class="workflow-desc mb-0">I understand your requirements.</p></div></div>
-                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-kanban"></i></div><div><span class="workflow-num">02</span><h4 class="workflow-title mb-0">Plan</h4><p class="workflow-desc mb-0">I plan the best solution.</p></div></div>
-                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-code-slash"></i></div><div><span class="workflow-num">03</span><h4 class="workflow-title mb-0">Develop</h4><p class="workflow-desc mb-0">I build with clean code.</p></div></div>
-                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-check2-all"></i></div><div><span class="workflow-num">04</span><h4 class="workflow-title mb-0">Test</h4><p class="workflow-desc mb-0">I test for quality &amp; performance.</p></div></div>
-                <div class="workflow-mobile-step"><div class="workflow-mobile-icon"><i class="bi bi-rocket-takeoff"></i></div><div><span class="workflow-num">05</span><h4 class="workflow-title mb-0">Deliver</h4><p class="workflow-desc mb-0">I deliver on time with support.</p></div></div>
+                <div class="workflow-mobile-step">
+                  <div class="workflow-mobile-icon"><i class="bi bi-clipboard-check"></i></div>
+                  <div><span class="workflow-num">01</span>
+                    <h4 class="workflow-title mb-0">Understand</h4>
+                    <p class="workflow-desc mb-0">I understand your requirements.</p>
+                  </div>
+                </div>
+                <div class="workflow-mobile-step">
+                  <div class="workflow-mobile-icon"><i class="bi bi-kanban"></i></div>
+                  <div><span class="workflow-num">02</span>
+                    <h4 class="workflow-title mb-0">Plan</h4>
+                    <p class="workflow-desc mb-0">I plan the best solution.</p>
+                  </div>
+                </div>
+                <div class="workflow-mobile-step">
+                  <div class="workflow-mobile-icon"><i class="bi bi-code-slash"></i></div>
+                  <div><span class="workflow-num">03</span>
+                    <h4 class="workflow-title mb-0">Develop</h4>
+                    <p class="workflow-desc mb-0">I build with clean code.</p>
+                  </div>
+                </div>
+                <div class="workflow-mobile-step">
+                  <div class="workflow-mobile-icon"><i class="bi bi-check2-all"></i></div>
+                  <div><span class="workflow-num">04</span>
+                    <h4 class="workflow-title mb-0">Test</h4>
+                    <p class="workflow-desc mb-0">I test for quality &amp; performance.</p>
+                  </div>
+                </div>
+                <div class="workflow-mobile-step">
+                  <div class="workflow-mobile-icon"><i class="bi bi-rocket-takeoff"></i></div>
+                  <div><span class="workflow-num">05</span>
+                    <h4 class="workflow-title mb-0">Deliver</h4>
+                    <p class="workflow-desc mb-0">I deliver on time with support.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1016,7 +1186,8 @@
                 <span class="workflow-cta-label">Ready to start?</span>
                 <h3 class="workflow-cta-title">Have a project in mind?</h3>
                 <p class="workflow-cta-desc">Let's build something amazing together.</p>
-                <button class="btn-primary-purple w-100 d-flex align-items-center justify-content-center gap-2" onclick="scrollToSection(event, 'contact')">
+                <button class="btn-primary-purple w-100 d-flex align-items-center justify-content-center gap-2"
+                  onclick="scrollToSection(event, 'contact')">
                   <span>Let's Talk</span>
                   <i class="bi bi-arrow-right"></i>
                 </button>
@@ -1071,13 +1242,16 @@
               <div class="pt-4 border-top-subtle">
                 <span class="social-label d-block mb-3">Find me online</span>
                 <div class="d-flex gap-3">
-                  <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon-btn">
+                  <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub" class="social-icon-btn">
                     <i class="bi bi-github"></i>
                   </a>
-                  <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
+                  <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME/" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
                     <i class="bi bi-linkedin"></i>
                   </a>
-                  <a href="https://x.com/YOUR_X_USERNAME" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="social-icon-btn">
+                  <a href="https://x.com/YOUR_X_USERNAME" target="_blank" rel="noopener noreferrer"
+                    aria-label="Twitter/X" class="social-icon-btn">
                     <i class="bi bi-twitter-x"></i>
                   </a>
                   <a href="mailto:mubashir.code@gmail.com" aria-label="Email" class="social-icon-btn">
@@ -1105,23 +1279,32 @@
                 <form id="contactForm" class="contact-form" novalidate>
                   <div class="row g-3 mb-3">
                     <div class="col-sm-6">
-                      <label for="contactName" class="form-label-custom">Your Name <span class="required-star">*</span></label>
-                      <input type="text" id="contactName" name="name" class="form-input-custom" placeholder="e.g. Alex Mercer" required />
+                      <label for="contactName" class="form-label-custom">Your Name <span
+                          class="required-star">*</span></label>
+                      <input type="text" id="contactName" name="name" class="form-input-custom"
+                        placeholder="e.g. Alex Mercer" required />
                     </div>
                     <div class="col-sm-6">
-                      <label for="contactEmail" class="form-label-custom">Your Email <span class="required-star">*</span></label>
-                      <input type="email" id="contactEmail" name="email" class="form-input-custom" placeholder="e.g. alex@example.com" required />
+                      <label for="contactEmail" class="form-label-custom">Your Email <span
+                          class="required-star">*</span></label>
+                      <input type="email" id="contactEmail" name="email" class="form-input-custom"
+                        placeholder="e.g. alex@example.com" required />
                     </div>
                   </div>
                   <div class="mb-3">
-                    <label for="contactSubject" class="form-label-custom">Subject <span class="required-star">*</span></label>
-                    <input type="text" id="contactSubject" name="subject" class="form-input-custom" placeholder="Project Inquiry / Job Opportunity" required />
+                    <label for="contactSubject" class="form-label-custom">Subject <span
+                        class="required-star">*</span></label>
+                    <input type="text" id="contactSubject" name="subject" class="form-input-custom"
+                      placeholder="Project Inquiry / Job Opportunity" required />
                   </div>
                   <div class="mb-4">
-                    <label for="contactMessage" class="form-label-custom">Your Message <span class="required-star">*</span></label>
-                    <textarea id="contactMessage" name="message" rows="4" class="form-input-custom" placeholder="Tell me about your project goals, timeline, and requirements..." required></textarea>
+                    <label for="contactMessage" class="form-label-custom">Your Message <span
+                        class="required-star">*</span></label>
+                    <textarea id="contactMessage" name="message" rows="4" class="form-input-custom"
+                      placeholder="Tell me about your project goals, timeline, and requirements..." required></textarea>
                   </div>
-                  <button type="submit" id="submitBtn" class="btn-primary-purple w-100 d-flex align-items-center justify-content-center gap-2">
+                  <button type="submit" id="submitBtn"
+                    class="btn-primary-purple w-100 d-flex align-items-center justify-content-center gap-2">
                     <span id="submitBtnText">Send Message</span>
                     <i class="bi bi-send" id="submitBtnIcon"></i>
                   </button>
@@ -1130,47 +1313,57 @@
 
               <!-- Developer Workstation SVG Illustration -->
               <div class="workstation-wrap">
-                <svg class="workstation-svg" viewBox="0 0 500 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <svg class="workstation-svg" viewBox="0 0 500 220" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
                   <defs>
                     <linearGradient id="monitor-screen-grad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#0B0E1B"/><stop offset="100%" stop-color="#15122B"/>
+                      <stop offset="0%" stop-color="#0B0E1B" />
+                      <stop offset="100%" stop-color="#15122B" />
                     </linearGradient>
                     <linearGradient id="desk-grad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#1E2030"/><stop offset="100%" stop-color="#0C0E1A"/>
+                      <stop offset="0%" stop-color="#1E2030" />
+                      <stop offset="100%" stop-color="#0C0E1A" />
                     </linearGradient>
                   </defs>
-                  <polygon points="50,180 450,180 490,210 10,210" fill="url(#desk-grad)" opacity="0.8"/>
-                  <line x1="10" y1="210" x2="490" y2="210" stroke="#7C3AED" stroke-width="1" opacity="0.3"/>
-                  <rect x="235" y="145" width="30" height="35" rx="2" fill="#2A2E45"/>
-                  <ellipse cx="250" cy="180" rx="36" ry="6" fill="#1C1F33" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.4"/>
-                  <rect x="140" y="30" width="220" height="120" rx="8" fill="#0D101C" stroke="#2D3250" stroke-width="2"/>
-                  <rect x="146" y="36" width="208" height="108" rx="4" fill="url(#monitor-screen-grad)"/>
-                  <rect x="146" y="36" width="208" height="14" fill="#070913"/>
-                  <circle cx="155" cy="43" r="2.5" fill="#EF4444" opacity="0.8"/>
-                  <circle cx="163" cy="43" r="2.5" fill="#F59E0B" opacity="0.8"/>
-                  <circle cx="171" cy="43" r="2.5" fill="#10B981" opacity="0.8"/>
-                  <rect x="156" y="58" width="45" height="3" rx="1.5" fill="#8B5CF6"/>
-                  <rect x="206" y="58" width="60" height="3" rx="1.5" fill="#38BDF8"/>
-                  <rect x="156" y="66" width="80" height="3" rx="1.5" fill="#E2E8F0" opacity="0.6"/>
-                  <rect x="166" y="74" width="110" height="3" rx="1.5" fill="#A78BFA"/>
-                  <rect x="166" y="82" width="70" height="3" rx="1.5" fill="#34D399"/>
-                  <rect x="156" y="90" width="40" height="3" rx="1.5" fill="#F472B6"/>
-                  <rect x="156" y="98" width="120" height="3" rx="1.5" fill="#8B5CF6"/>
-                  <rect x="296" y="60" width="44" height="44" rx="8" fill="#7C3AED" fill-opacity="0.2" stroke="#8B5CF6" stroke-width="1"/>
-                  <path d="M312 75L306 82L312 89" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M324 75L330 82L324 89" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <line x1="320" y1="74" x2="316" y2="90" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"/>
-                  <rect x="180" y="176" width="140" height="24" rx="4" fill="#131728" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.5"/>
-                  <line x1="186" y1="184" x2="314" y2="184" stroke="#2E3452" stroke-width="3" stroke-dasharray="3 2"/>
-                  <line x1="186" y1="190" x2="314" y2="190" stroke="#2E3452" stroke-width="3" stroke-dasharray="3 2"/>
-                  <rect x="225" y="193" width="50" height="3" rx="1.5" fill="#8B5CF6" opacity="0.8"/>
-                  <ellipse cx="345" cy="188" rx="8" ry="12" fill="#181C30" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.4"/>
-                  <line x1="345" y1="180" x2="345" y2="186" stroke="#8B5CF6" stroke-width="1"/>
-                  <ellipse cx="105" cy="186" rx="14" ry="4" fill="#080911"/>
-                  <path d="M96 178 L114 178 L110 196 L100 196 Z" fill="#2E344E" stroke="#1E2235" stroke-width="1"/>
-                  <path d="M105 178 Q100 162 93 166 Q98 174 105 178 Z" fill="#10B981"/>
-                  <path d="M105 178 Q110 162 117 166 Q112 174 105 178 Z" fill="#059669"/>
-                  <path d="M105 178 Q105 156 105 156 Q108 168 105 178 Z" fill="#34D399"/>
+                  <polygon points="50,180 450,180 490,210 10,210" fill="url(#desk-grad)" opacity="0.8" />
+                  <line x1="10" y1="210" x2="490" y2="210" stroke="#7C3AED" stroke-width="1" opacity="0.3" />
+                  <rect x="235" y="145" width="30" height="35" rx="2" fill="#2A2E45" />
+                  <ellipse cx="250" cy="180" rx="36" ry="6" fill="#1C1F33" stroke="#7C3AED" stroke-width="1"
+                    stroke-opacity="0.4" />
+                  <rect x="140" y="30" width="220" height="120" rx="8" fill="#0D101C" stroke="#2D3250"
+                    stroke-width="2" />
+                  <rect x="146" y="36" width="208" height="108" rx="4" fill="url(#monitor-screen-grad)" />
+                  <rect x="146" y="36" width="208" height="14" fill="#070913" />
+                  <circle cx="155" cy="43" r="2.5" fill="#EF4444" opacity="0.8" />
+                  <circle cx="163" cy="43" r="2.5" fill="#F59E0B" opacity="0.8" />
+                  <circle cx="171" cy="43" r="2.5" fill="#10B981" opacity="0.8" />
+                  <rect x="156" y="58" width="45" height="3" rx="1.5" fill="#8B5CF6" />
+                  <rect x="206" y="58" width="60" height="3" rx="1.5" fill="#38BDF8" />
+                  <rect x="156" y="66" width="80" height="3" rx="1.5" fill="#E2E8F0" opacity="0.6" />
+                  <rect x="166" y="74" width="110" height="3" rx="1.5" fill="#A78BFA" />
+                  <rect x="166" y="82" width="70" height="3" rx="1.5" fill="#34D399" />
+                  <rect x="156" y="90" width="40" height="3" rx="1.5" fill="#F472B6" />
+                  <rect x="156" y="98" width="120" height="3" rx="1.5" fill="#8B5CF6" />
+                  <rect x="296" y="60" width="44" height="44" rx="8" fill="#7C3AED" fill-opacity="0.2" stroke="#8B5CF6"
+                    stroke-width="1" />
+                  <path d="M312 75L306 82L312 89" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M324 75L330 82L324 89" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <line x1="320" y1="74" x2="316" y2="90" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" />
+                  <rect x="180" y="176" width="140" height="24" rx="4" fill="#131728" stroke="#7C3AED" stroke-width="1"
+                    stroke-opacity="0.5" />
+                  <line x1="186" y1="184" x2="314" y2="184" stroke="#2E3452" stroke-width="3" stroke-dasharray="3 2" />
+                  <line x1="186" y1="190" x2="314" y2="190" stroke="#2E3452" stroke-width="3" stroke-dasharray="3 2" />
+                  <rect x="225" y="193" width="50" height="3" rx="1.5" fill="#8B5CF6" opacity="0.8" />
+                  <ellipse cx="345" cy="188" rx="8" ry="12" fill="#181C30" stroke="#7C3AED" stroke-width="1"
+                    stroke-opacity="0.4" />
+                  <line x1="345" y1="180" x2="345" y2="186" stroke="#8B5CF6" stroke-width="1" />
+                  <ellipse cx="105" cy="186" rx="14" ry="4" fill="#080911" />
+                  <path d="M96 178 L114 178 L110 196 L100 196 Z" fill="#2E344E" stroke="#1E2235" stroke-width="1" />
+                  <path d="M105 178 Q100 162 93 166 Q98 174 105 178 Z" fill="#10B981" />
+                  <path d="M105 178 Q110 162 117 166 Q112 174 105 178 Z" fill="#059669" />
+                  <path d="M105 178 Q105 156 105 156 Q108 168 105 178 Z" fill="#34D399" />
                 </svg>
               </div>
 
@@ -1205,10 +1398,14 @@
             Building responsive, scalable, and user-focused web applications with modern technologies.
           </p>
           <div class="d-flex gap-3 mt-4">
-            <a href="https://github.com/mubashir-webdev" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon-btn"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/muhammad-mubashir-322388329/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X" class="social-icon-btn"><i class="bi bi-twitter-x"></i></a>
-            <a href="mailto:mubashir.code@gmail.com" aria-label="Email" class="social-icon-btn"><i class="bi bi-envelope"></i></a>
+            <a href="https://github.com/mubashir-webdev" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+              class="social-icon-btn"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/muhammad-mubashir-322388329/" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn" class="social-icon-btn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X"
+              class="social-icon-btn"><i class="bi bi-twitter-x"></i></a>
+            <a href="mailto:mubashir.code@gmail.com" aria-label="Email" class="social-icon-btn"><i
+                class="bi bi-envelope"></i></a>
           </div>
         </div>
 
@@ -1216,13 +1413,13 @@
         <div class="col-lg-4 col-md-6">
           <h4 class="footer-col-title">Quick Links</h4>
           <div class="footer-links">
-            <a href="#home"       onclick="scrollToSection(event,'home')">Home</a>
-            <a href="#about"      onclick="scrollToSection(event,'about')">About</a>
-            <a href="#skills"     onclick="scrollToSection(event,'skills')">Skills</a>
-            <a href="#projects"   onclick="scrollToSection(event,'projects')">Projects</a>
+            <a href="#home" onclick="scrollToSection(event,'home')">Home</a>
+            <a href="#about" onclick="scrollToSection(event,'about')">About</a>
+            <a href="#skills" onclick="scrollToSection(event,'skills')">Skills</a>
+            <a href="#projects" onclick="scrollToSection(event,'projects')">Projects</a>
             <a href="#experience" onclick="scrollToSection(event,'experience')">Experience</a>
-            <a href="#services"   onclick="scrollToSection(event,'services')">Services</a>
-            <a href="#contact"    onclick="scrollToSection(event,'contact')">Contact</a>
+            <a href="#services" onclick="scrollToSection(event,'services')">Services</a>
+            <a href="#contact" onclick="scrollToSection(event,'contact')">Contact</a>
           </div>
         </div>
 
@@ -1245,7 +1442,8 @@
       </div>
 
       <!-- Footer Bottom -->
-      <div class="footer-bottom d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 text-center text-sm-start">
+      <div
+        class="footer-bottom d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 text-center text-sm-start">
         <div class="footer-copyright">
           &copy; 2026 Muhammad Mubashir. All rights reserved.
         </div>
@@ -1262,7 +1460,8 @@
   </footer>
 
   <!-- Back to Top floating button -->
-  <button class="back-to-top-fab" id="backToTopFab" onclick="scrollToTop()" aria-label="Back to top" style="display:none;">
+  <button class="back-to-top-fab" id="backToTopFab" onclick="scrollToTop()" aria-label="Back to top"
+    style="display:none;">
     <i class="bi bi-arrow-up"></i>
   </button>
 
@@ -1276,4 +1475,5 @@
   ====================================================== -->
   <script src="js/script.js"></script>
 </body>
+
 </html>
