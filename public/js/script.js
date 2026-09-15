@@ -4,6 +4,84 @@
 // =======================================================
 
 // -------------------------------------------------------
+// 0. PRELOADER: Typing animation & smooth reveal
+// -------------------------------------------------------
+
+function initPreloader() {
+  const preloader = document.getElementById('preloader');
+  const textEl = document.getElementById('preloaderText');
+  const progressBar = document.getElementById('preloaderProgressBar');
+
+  if (!preloader || !textEl) return;
+
+  // Lock body scroll while preloader is active
+  document.body.classList.add('preloader-active');
+
+  const message = "Welcome to Muhammad Mubashir's Portfolio";
+  let charIndex = 0;
+  let isPageLoaded = false;
+  let isTypingFinished = false;
+
+  window.addEventListener('load', () => {
+    isPageLoaded = true;
+    if (progressBar) progressBar.style.width = '100%';
+    checkAndDismiss();
+  });
+
+  // Safety fallback: if an asset takes too long, never trap user
+  setTimeout(() => {
+    isPageLoaded = true;
+    if (progressBar) progressBar.style.width = '100%';
+    checkAndDismiss();
+  }, 2500);
+
+  function typeChar() {
+    if (charIndex < message.length) {
+      textEl.textContent += message.charAt(charIndex);
+      charIndex++;
+      if (progressBar && !isPageLoaded) {
+        const percent = Math.round((charIndex / message.length) * 85);
+        progressBar.style.width = percent + '%';
+      }
+      setTimeout(typeChar, 36);
+    } else {
+      isTypingFinished = true;
+      checkAndDismiss();
+    }
+  }
+
+  function checkAndDismiss() {
+    if (isTypingFinished && isPageLoaded) {
+      // Brief pause so the completed welcome greeting is comfortably readable
+      setTimeout(() => {
+        dismissPreloader();
+      }, 350);
+    }
+  }
+
+  function dismissPreloader() {
+    if (!preloader.classList.contains('preloader-hidden')) {
+      preloader.classList.add('preloader-hidden');
+      document.body.classList.remove('preloader-active');
+
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 550);
+    }
+  }
+
+  // Start typing immediately
+  typeChar();
+}
+
+// Start preloader as early as possible
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPreloader);
+} else {
+  initPreloader();
+}
+
+// -------------------------------------------------------
 // 1. NAVBAR: Scroll-based background + active section
 // -------------------------------------------------------
 
