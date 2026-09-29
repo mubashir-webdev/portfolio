@@ -4,74 +4,58 @@
 // =======================================================
 
 // -------------------------------------------------------
-// 0. PRELOADER: Typing animation & smooth reveal
+// 0. PRELOADER: Profile Avatar + Professional Quote
 // -------------------------------------------------------
 
 function initPreloader() {
   const preloader = document.getElementById('preloader');
-  const textEl = document.getElementById('preloaderText');
   const progressBar = document.getElementById('preloaderProgressBar');
 
-  if (!preloader || !textEl) return;
+  if (!preloader) return;
 
-  // Lock body scroll while preloader is active
+  // Lock body scroll while preloader is visible
   document.body.classList.add('preloader-active');
 
-  const message = "Welcome to Muhammad Mubashir's Portfolio";
-  let charIndex = 0;
-  let isPageLoaded = false;
-  let isTypingFinished = false;
-
-  window.addEventListener('load', () => {
-    isPageLoaded = true;
-    if (progressBar) progressBar.style.width = '100%';
-    checkAndDismiss();
-  });
-
-  // Safety fallback: if an asset takes too long, never trap user
-  setTimeout(() => {
-    isPageLoaded = true;
-    if (progressBar) progressBar.style.width = '100%';
-    checkAndDismiss();
-  }, 2500);
-
-  function typeChar() {
-    if (charIndex < message.length) {
-      textEl.textContent += message.charAt(charIndex);
-      charIndex++;
-      if (progressBar && !isPageLoaded) {
-        const percent = Math.round((charIndex / message.length) * 85);
-        progressBar.style.width = percent + '%';
-      }
-      setTimeout(typeChar, 36);
-    } else {
-      isTypingFinished = true;
-      checkAndDismiss();
-    }
-  }
-
-  function checkAndDismiss() {
-    if (isTypingFinished && isPageLoaded) {
-      // Brief pause so the completed welcome greeting is comfortably readable
-      setTimeout(() => {
-        dismissPreloader();
-      }, 350);
-    }
-  }
+  let isDismissed = false;
 
   function dismissPreloader() {
-    if (!preloader.classList.contains('preloader-hidden')) {
+    if (isDismissed) return;
+    isDismissed = true;
+
+    if (progressBar) {
+      progressBar.style.width = '100%';
+    }
+
+    // Brief smooth pause before exit transition
+    setTimeout(() => {
       preloader.classList.add('preloader-hidden');
       document.body.classList.remove('preloader-active');
 
       setTimeout(() => {
         preloader.style.display = 'none';
       }, 550);
-    }
+    }, 280);
   }
 
-  // Start typing immediately
-  typeChar();
+  // Smooth simulated progress bar
+  if (progressBar) {
+    progressBar.style.width = '25%';
+    setTimeout(() => {
+      if (!isDismissed) progressBar.style.width = '70%';
+    }, 200);
+  }
+
+  // Dismiss as soon as page assets are loaded
+  if (document.readyState === 'complete') {
+    setTimeout(dismissPreloader, 350);
+  } else {
+    window.addEventListener('load', () => {
+      setTimeout(dismissPreloader, 300);
+    });
+  }
+
+  // Safety fallback: never trap the user, max 1.3s
+  setTimeout(dismissPreloader, 1300);
 }
 
 // Start preloader as early as possible
@@ -82,34 +66,25 @@ if (document.readyState === 'loading') {
 }
 
 // -------------------------------------------------------
-// 1. NAVBAR: Scroll-based background + active section
+// 1. NAVBAR: Inward-Shrinking Floating Pill & Active Section
 // -------------------------------------------------------
 
-const navbar  = document.getElementById('navbar');
+const navbar = document.getElementById('navbar');
 const sections = ['home', 'about', 'skills', 'projects', 'experience', 'services', 'contact'];
 
 /**
- * Updates the navbar background when user scrolls down,
- * and tracks which section is currently in view.
+ * Updates active section in nav and floating back-to-top button
  */
-function handleScroll() {
-  // Add/remove "scrolled" class for navbar glass effect
-  if (window.scrollY > 20) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-
-  // Active nav link tracking
+function updateActiveNavAndFab() {
   const scrollPosition = window.scrollY + 120;
 
   let currentSection = 'home';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
+  for (let i = 0; i < sections.length; i++) {
+    const el = document.getElementById(sections[i]);
     if (el && el.offsetTop <= scrollPosition) {
-      currentSection = id;
+      currentSection = sections[i];
     }
-  });
+  }
 
   // Update desktop nav links
   document.querySelectorAll('.nav-link-item').forEach(link => {
@@ -135,8 +110,58 @@ function handleScroll() {
   }
 }
 
-window.addEventListener('scroll', handleScroll, { passive: true });
-handleScroll(); // Run on page load
+/**
+ * Initializes ultra-smooth, zero-jank navbar scroll transformation
+ */
+function initNavbarScroll() {
+  const sentinel = document.getElementById('topSentinel');
+
+  // Primary: Native IntersectionObserver for zero JS execution during scrolling
+  if (sentinel && 'IntersectionObserver' in window) {
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navbar.classList.remove('scrolled');
+          } else {
+            navbar.classList.add('scrolled');
+          }
+        });
+      },
+      { root: null, threshold: 0 }
+    );
+    navObserver.observe(sentinel);
+  }
+
+  // RAF-throttled scroll handler for active links & fab
+  let isTicking = false;
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!isTicking) {
+        requestAnimationFrame(() => {
+          // Fallback if IntersectionObserver is unavailable
+          if (!sentinel || !('IntersectionObserver' in window)) {
+            if (window.scrollY > 25) {
+              navbar.classList.add('scrolled');
+            } else {
+              navbar.classList.remove('scrolled');
+            }
+          }
+          updateActiveNavAndFab();
+          isTicking = false;
+        });
+        isTicking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  // Initial check
+  updateActiveNavAndFab();
+}
+
+initNavbarScroll();
 
 // -------------------------------------------------------
 // 2. SMOOTH SCROLLING to sections
@@ -480,12 +505,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // -------------------------------------------------------
-// 10. UTILITY: Debounce (for performance)
+// 10. UTILITY: Debounce
 // -------------------------------------------------------
 
 /**
- * Debounce function — limits how often a function fires.
- * Useful for scroll/resize events.
+ * Debounce utility — limits how often an event callback fires.
  */
 function debounce(fn, delay) {
   let timer;
@@ -495,5 +519,3 @@ function debounce(fn, delay) {
   };
 }
 
-// Apply debounce to scroll handler for better performance
-window.addEventListener('scroll', debounce(handleScroll, 10), { passive: true });

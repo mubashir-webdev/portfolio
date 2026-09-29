@@ -18,7 +18,18 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the "public" folder
 // This serves index.html, CSS, JS, images, and the CV PDF
 // -------------------------------------------------------
-app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  express.static(path.join(__dirname, "public"), {
+    maxAge: "1d",
+    setHeaders: (res, filePath) => {
+      if (filePath.endsWith(".html")) {
+        res.setHeader("Cache-Control", "no-cache");
+      } else if (filePath.match(/\.(webp|jpg|jpeg|png|svg|ico|pdf|woff2)$/)) {
+        res.setHeader("Cache-Control", "public, max-age=604800, immutable");
+      }
+    }
+  })
+);
 
 // -------------------------------------------------------
 // API Route: POST /api/contact
