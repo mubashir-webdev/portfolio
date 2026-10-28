@@ -86,10 +86,20 @@ app.get("*", (req, res) => {
 });
 
 // -------------------------------------------------------
-// Start the server
+// Start the server with error handling
 // -------------------------------------------------------
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`\n🚀 Portfolio server running at: http://localhost:${PORT}`);
   console.log(`📁 Serving static files from: ./public`);
   console.log(`📬 Contact API ready at: POST /api/contact\n`);
+});
+
+server.on("error", (err) => {
+  if (err.code === "EADDRINUSE") {
+    console.error(`\n❌ Error: Port ${PORT} is already in use by another running instance.`);
+    console.error(`👉 Tip: Stop the other process or run on a different port: $env:PORT=3001; npm run dev\n`);
+    process.exit(1);
+  } else {
+    console.error("Server error:", err);
+  }
 });

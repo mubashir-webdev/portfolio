@@ -200,18 +200,24 @@ function scrollToTop() {
 
 const mobileMenu = document.getElementById('mobileMenu');
 const menuIcon   = document.getElementById('menuIcon');
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 
 /**
  * Toggles the mobile navigation menu open/closed.
  */
 function toggleMobileMenu() {
+  if (!mobileMenu) return;
   const isOpen = mobileMenu.classList.contains('open');
   if (isOpen) {
     closeMobileMenu();
   } else {
     mobileMenu.classList.add('open');
-    menuIcon.classList.remove('bi-list');
-    menuIcon.classList.add('bi-x-lg');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'true');
+    if (menuIcon) {
+      menuIcon.classList.remove('bi-list');
+      menuIcon.classList.add('bi-x-lg');
+    }
   }
 }
 
@@ -221,6 +227,8 @@ function toggleMobileMenu() {
 function closeMobileMenu() {
   if (mobileMenu) {
     mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    if (mobileMenuBtn) mobileMenuBtn.setAttribute('aria-expanded', 'false');
     if (menuIcon) {
       menuIcon.classList.remove('bi-x-lg');
       menuIcon.classList.add('bi-list');
@@ -313,6 +321,199 @@ function initScrollReveal() {
   // Observe all elements with reveal animation class
   document.querySelectorAll('.reveal-fade-up').forEach(el => {
     observer.observe(el);
+  });
+}
+
+// -------------------------------------------------------
+// 5.5 PROJECTS CAROUSEL (Responsive, Touch-Enabled, Accessible)
+// -------------------------------------------------------
+
+let currentProjectIndex = 0;
+let totalProjectSlides = 5;
+
+/**
+ * Returns number of visible project cards based on viewport width:
+ * Desktop (>= 992px): 3
+ * Tablet (640px - 991px): 2
+ * Mobile (< 640px): 1
+ */
+function getProjectsPerView() {
+  const w = window.innerWidth;
+  if (w < 640) return 1;
+  if (w < 992) return 2;
+  return 3;
+}
+
+/**
+ * Returns max starting slide index
+ */
+function getMaxSlideIndex() {
+  const perView = getProjectsPerView();
+  return Math.max(0, totalProjectSlides - perView);
+}
+
+/**
+ * Updates carousel position, counter badge, arrow buttons, and pagination dots
+ */
+function updateCarouselUI() {
+  const track = document.getElementById('projectsCarouselTrack');
+  const viewport = document.getElementById('projectsCarouselViewport');
+  const prevBtn = document.getElementById('projectPrevBtn');
+  const nextBtn = document.getElementById('projectNextBtn');
+  const counterCurrent = document.getElementById('currentSlideNum');
+  const counterTotal = document.getElementById('totalSlideNum');
+  const dotsContainer = document.getElementById('carouselDots');
+
+  if (!track || !viewport) return;
+
+  const perView = getProjectsPerView();
+  const maxIndex = getMaxSlideIndex();
+
+  // Clamp index within valid range
+  if (currentProjectIndex > maxIndex) {
+    currentProjectIndex = maxIndex;
+  }
+  if (currentProjectIndex < 0) {
+    currentProjectIndex = 0;
+  }
+
+  // Slide track by offset
+  const slides = track.querySelectorAll('.project-slide');
+  if (slides.length > 0) {
+    const slideRect = slides[0].getBoundingClientRect();
+    const gap = perView === 3 ? 24 : perView === 2 ? 20 : 16;
+    const offset = currentProjectIndex * (slideRect.width + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  // Update button states
+  if (prevBtn) {
+    prevBtn.disabled = currentProjectIndex <= 0;
+    prevBtn.setAttribute('aria-disabled', currentProjectIndex <= 0 ? 'true' : 'false');
+  }
+  if (nextBtn) {
+    nextBtn.disabled = currentProjectIndex >= maxIndex;
+    nextBtn.setAttribute('aria-disabled', currentProjectIndex >= maxIndex ? 'true' : 'false');
+  }
+
+  // Update counter
+  if (counterCurrent && counterTotal) {
+    counterCurrent.textContent = currentProjectIndex + 1;
+    counterTotal.textContent = maxIndex + 1;
+  }
+
+  // Update pagination dots
+  if (dotsContainer) {
+    const totalDots = maxIndex + 1;
+    if (dotsContainer.children.length !== totalDots) {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('button');
+        dot.className = `carousel-dot ${i === currentProjectIndex ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Go to project slide ${i + 1}`);
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-selected', i === currentProjectIndex ? 'true' : 'false');
+        dot.addEventListener('click', () => {
+          goToProjectSlide(i);
+        });
+        dotsContainer.appendChild(dot);
+      }
+    } else {
+      Array.from(dotsContainer.children).forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentProjectIndex);
+        dot.setAttribute('aria-selected', idx === currentProjectIndex ? 'true' : 'false');
+      });
+    }
+  }
+}
+
+/**
+ * Slide navigation handler
+ * @param {'next'|'prev'} direction
+ */
+function slideProjects(direction) {
+  const maxIndex = getMaxSlideIndex();
+  if (direction === 'next') {
+    if (currentProjectIndex < maxIndex) {
+      currentProjectIndex++;
+    } else {
+      currentProjectIndex = 0; // Seamless wrap to start
+    }
+  } else if (direction === 'prev') {
+    if (currentProjectIndex > 0) {
+      currentProjectIndex--;
+    } else {
+      currentProjectIndex = maxIndex; // Seamless wrap to end
+    }
+  }
+  updateCarouselUI();
+}
+
+/**
+ * Jump to specific slide index
+ * @param {number} index
+ */
+function goToProjectSlide(index) {
+  const maxIndex = getMaxSlideIndex();
+  currentProjectIndex = Math.max(0, Math.min(index, maxIndex));
+  updateCarouselUI();
+}
+
+/**
+ * Initializes the projects carousel with touch gestures, resize listeners, and keyboard support
+ */
+function initProjectsCarousel() {
+  const viewport = document.getElementById('projectsCarouselViewport');
+  if (!viewport) return;
+
+  const track = document.getElementById('projectsCarouselTrack');
+  if (track) {
+    totalProjectSlides = track.querySelectorAll('.project-slide').length;
+  }
+
+  // Initial layout calculation
+  updateCarouselUI();
+
+  // Responsive resize handler with debouncing
+  window.addEventListener('resize', debounce(() => {
+    updateCarouselUI();
+  }, 100));
+
+  // Touch Swipe Handling for Mobile & Tablet
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let touchStartY = 0;
+
+  viewport.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const touchEndY = e.changedTouches[0].screenY;
+    const diffX = touchStartX - touchEndX;
+    const diffY = Math.abs(touchStartY - touchEndY);
+
+    // Trigger horizontal swipe if movement is greater than 40px and predominantly horizontal
+    if (Math.abs(diffX) > 40 && Math.abs(diffX) > diffY) {
+      if (diffX > 0) {
+        slideProjects('next');
+      } else {
+        slideProjects('prev');
+      }
+    }
+  }, { passive: true });
+
+  // Accessible Keyboard Navigation
+  viewport.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      slideProjects('next');
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      slideProjects('prev');
+    }
   });
 }
 
@@ -490,6 +691,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Start scroll reveal animations
   initScrollReveal();
 
+  // Initialize Projects Carousel
+  initProjectsCarousel();
+
   // Reveal hero content immediately (it's already visible)
   document.querySelectorAll('.hero-content, .hero-portrait-col').forEach(el => {
     setTimeout(() => el.classList.add('revealed'), 100);
@@ -498,10 +702,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Check portrait placeholder
   createPortraitPlaceholder();
 
-  console.log('✅ Portfolio initialized successfully!');
-  console.log('📁 Project structure: server.js → public/index.html, css/style.css, js/script.js');
-  console.log('🎨 Theme: dark (toggle with the moon button in navbar)');
-  console.log('📬 Contact form: POST /api/contact');
+  console.log('✅ Portfolio initialized successfully with responsive carousel and refined navbar!');
 });
 
 // -------------------------------------------------------
